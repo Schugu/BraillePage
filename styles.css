@@ -1,3 +1,4 @@
+/* TODO EL DOCUMENTO */
 * {
     margin: 0;
     padding: 0;
@@ -5,6 +6,7 @@
     font-family: sans-serif;
 }
 
+/* PRIMERA PARTE: PRESENTACIÓN DEL TEMA */
 .info {
     display: flex;
     flex-direction: column;
@@ -36,14 +38,67 @@
     text-align: center;
     align-self: center;
 }
-
-
-
 .signoGenerador {
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+
+
+/* SEGUNDA PARTE: ALFABETO */
+.alfabeto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+.alfabetoFila{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.alfabeto__signos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding: 5px;
+    gap: 10px;
+}
+
+.alfabeto__letras{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding: 5px;
+    gap: 10px;
+}
+
+.alfabeto__letra {
+    width: 100px;
+    height: 147px;
+    border: 1px solid black;
+    cursor: grab;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6em;
+}
+.alfabeto__letra span {
+    margin-top: -15px;
+}
+.alfabeto__letra:hover {
+    background-color: rgb(212, 212, 212);
+}
+.alfabeto-p{
+    display: inline-block;
+    width: 85%;
+    text-align: center;
 }
 
 
@@ -64,9 +119,7 @@
 
 
 
-
-
-
+/* PARTE: MINIJUEGO DE LETRAS */
 .content {
     width: 100%;
     height: auto;
@@ -92,6 +145,11 @@
 }
 
 
+
+
+
+
+/* SIGNOS BRAILLE */
 .botones {
     width: 100%;
     height: auto;
@@ -134,8 +192,6 @@
     grid-row: 3/3;
     grid-column: 2/2;
 }
- 
-
 .punto {
     background-color: #00000011;
     border-radius: 50%;
@@ -144,12 +200,11 @@
     margin: auto;
     cursor: grab;
 }
-
 .boton:hover {
     background-color: rgb(212, 212, 212);
 }
-
 .puntoPresente {
     background-color: #000;
 }
 
+/* MEDIA QUERIES */

@@ -173,15 +173,15 @@
     background-color: #000;
 }
 /* signo R */
-.signoS > #punto1,
-.signoS > #punto2,
-.signoS > #punto3,
-.signoS > #punto5 {
+.signoR > #punto1,
+.signoR > #punto2,
+.signoR > #punto3,
+.signoR > #punto5 {
     background-color: #000;
 }
 /* signo S */
 .signoS > #punto2,
-.signoS > #punto3
+.signoS > #punto3,
 .signoS > #punto4 {
     background-color: #000;
 }
@@ -193,38 +193,38 @@
     background-color: #000;
 }
 /* Signo U */
-.signoK > #punto1,
-.signoK > #punto3,
-.signoK > #punto6 {
+.signoU > #punto1,
+.signoU > #punto3,
+.signoU > #punto6 {
     background-color: #000;
 }
 /* signo V */
-.signoL > #punto1,
-.signoL > #punto3, 
-.signoL > #punto2,
-.signoK > #punto6 {
+.signoV > #punto1,
+.signoV > #punto3, 
+.signoV > #punto2,
+.signoV > #punto6 {
     background-color: #000;
 }
 /* signo X */
-.signoM > #punto1,
-.signoM > #punto3,
-.signoM > #punto4,
-.signoK > #punto6 {
+.signoX > #punto1,
+.signoX > #punto3,
+.signoX > #punto4,
+.signoX > #punto6 {
     background-color: #000;
 }
 /* signo Y */
-.signoN > #punto1,
-.signoN > #punto3,
-.signoN > #punto4,
-.signoN > #punto5,
-.signoK > #punto6 {
+.signoY > #punto1,
+.signoY > #punto3,
+.signoY > #punto4,
+.signoY > #punto5,
+.signoY > #punto6 {
     background-color: #000;
 }
 /* signo Z */
-.signoO > #punto1,
-.signoO > #punto3,
-.signoO > #punto5,
-.signoK > #punto6 {
+.signoZ > #punto1,
+.signoZ > #punto3,
+.signoZ > #punto5,
+.signoZ > #punto6 {
     background-color: #000;
 }
 /* signo Ñ */

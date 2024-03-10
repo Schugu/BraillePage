@@ -3,7 +3,7 @@
 
 
 
-const botones = document.querySelectorAll(".boton");
+const botones = document.querySelectorAll(".botonClickeable");
 const parrafo = document.querySelector('.parrafo');
 const botonBorrar = document.querySelector('.botonBorrar')
 const botonBorrarTodo = document.querySelector('.botonBorrarTodo');

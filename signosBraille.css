@@ -62,6 +62,15 @@
 
 
 
+/* Signo 0 */
+.signo0 > #punto1, 
+.signo0 > #punto2, 
+.signo0 > #punto3, 
+.signo0 > #punto4, 
+.signo0 > #punto5, 
+.signo0 > #punto6 {
+    background-color: #000;
+}
 
 /* Signo A */
 .signoA > #punto1 {

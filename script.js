@@ -2,7 +2,7 @@ import {signosBraille} from 'http://127.0.0.1:5500/signosBraille.js'
 
 const contenedorBotones = document.querySelectorAll(`.alfabeto__signos`);
 const contenedorLetras = document.querySelectorAll(`.alfabeto__letras`);
-    
+const listaDeLetras = Object.keys(signosBraille);    
 function ponerBotones () {
     const botones = document.querySelectorAll(".botonClickeable");
     const parrafo = document.querySelector('.parrafo');
@@ -29,12 +29,12 @@ function ponerBotones () {
 
 function crearFilasDeBotones (fila, inicio, final) { 
     for (let i = inicio; i < final; i++) {
-        const signosBrailleLetra = Object.keys(signosBraille)[i];
+        const signosBrailleLetra = listaDeLetras[i];
 
         const divBoton = document.createElement(`div`);
         divBoton.classList.add(`boton`, ('signo' + signosBrailleLetra.toUpperCase()));
         contenedorBotones[fila].appendChild(divBoton);
-        divBoton.id = `signoAlfabetoF1${signosBrailleLetra}`;
+        divBoton.id = `signoAlfabetoF${fila + 1}-${signosBrailleLetra}`;
 
         for (let j = 0; j < 6; j++) {
             const spanSigno = document.createElement("span");
@@ -52,11 +52,33 @@ function crearFilasDeBotones (fila, inicio, final) {
     }
 } 
 
+function creaAlfabeto () {
+    const botones = document.querySelector(`.botonesInteractivos`);
+    
+
+    for (let i = 0; i < 27; i++) {
+        const signosBrailleLetra = listaDeLetras[i];
+        const divBoton = document.createElement(`div`);
+        divBoton.classList.add(`boton`, ('signo' + signosBrailleLetra.toUpperCase()));
+        botones.appendChild(divBoton);
+        divBoton.id = `signo`+ signosBrailleLetra;
+
+        for (let j = 0; j < 6; j++) {
+            const spanSigno = document.createElement("span");
+            spanSigno.classList.add("punto");
+            divBoton.appendChild(spanSigno);
+            spanSigno.id = `punto${j+1}`        
+        }  
+    }
+                              
+}
+
 function crearSignos () {
     crearFilasDeBotones(0, 0, 10);
     crearFilasDeBotones(1, 10, 20);
     crearFilasDeBotones(2, 20, 25);
     crearFilasDeBotones(3, 25, 27);
+    creaAlfabeto();
 }
 
 document.addEventListener("DOMContentLoaded", function() {

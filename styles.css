@@ -177,7 +177,7 @@
 
 
 /* SIGNOS BRAILLE */
-.botones {
+.botonesInteractivos {
     width: 100%;
     height: auto;
     display: flex;

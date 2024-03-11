@@ -2,7 +2,8 @@ import {signosBraille} from 'http://127.0.0.1:5500/signosBraille.js'
 
 const contenedorBotones = document.querySelectorAll(`.alfabeto__signos`);
 const contenedorLetras = document.querySelectorAll(`.alfabeto__letras`);
-const listaDeLetras = Object.keys(signosBraille);    
+const listaDeLetras = Object.keys(signosBraille); 
+
 function ponerBotones () {
     const botones = document.querySelectorAll(".botonClickeable");
     const parrafo = document.querySelector('.parrafo');
@@ -54,14 +55,12 @@ function crearFilasDeBotones (fila, inicio, final) {
 
 function creaAlfabeto () {
     const botones = document.querySelector(`.botonesInteractivos`);
-    
-
     for (let i = 0; i < 27; i++) {
         const signosBrailleLetra = listaDeLetras[i];
         const divBoton = document.createElement(`div`);
-        divBoton.classList.add(`boton`, ('signo' + signosBrailleLetra.toUpperCase()));
+        divBoton.classList.add(`boton`, ('signo' + signosBrailleLetra.toUpperCase()), `botonClickeable`);
         botones.appendChild(divBoton);
-        divBoton.id = `signo`+ signosBrailleLetra;
+        divBoton.id = signosBrailleLetra;
 
         for (let j = 0; j < 6; j++) {
             const spanSigno = document.createElement("span");
@@ -81,7 +80,8 @@ function crearSignos () {
     creaAlfabeto();
 }
 
+// MAIN
 document.addEventListener("DOMContentLoaded", function() {
-    ponerBotones();
     crearSignos();
+    ponerBotones();
 });

@@ -62,15 +62,39 @@
 
 
 
-/* Signo 0 */
-.signo0 > #punto1, 
-.signo0 > #punto2, 
-.signo0 > #punto3, 
-.signo0 > #punto4, 
-.signo0 > #punto5, 
-.signo0 > #punto6 {
+/* Signo completo */
+.signoCmplt > #punto1, 
+.signoCmplt > #punto2, 
+.signoCmplt > #punto3, 
+.signoCmplt > #punto4, 
+.signoCmplt > #punto5, 
+.signoCmplt > #punto6 {
     background-color: #000;
 }
+/* Signo Punto (.) */
+.signoPunto > #punto3 {
+    background-color: #000;
+}
+/* Signo Coma (,) */
+.signoComa > #punto2 {
+    background-color: #000;
+}
+/* Signo Punto y coma (;) */
+.signoPunto-y-coma > #punto2,
+.signoPunto-y-coma > #punto3 {
+    background-color: #000;
+}
+/* Signo Dos puntos (:) */
+.signoDosPuntos > #punto2,
+.signoDosPuntos > #punto5 {
+    background-color: #000;
+}
+/* Signo Guión (-) */
+.signoGuion > #punto3,
+.signoGuion > #punto6 {
+    background-color: #000;
+}
+
 
 /* Signo A */
 .signoA > #punto1 {

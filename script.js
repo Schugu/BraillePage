@@ -72,6 +72,61 @@ function creaAlfabeto () {
                               
 }
 
+function crearSignosConPalabras (palabraParaCodificar){
+    let palabra = palabraParaCodificar;
+    let palabraEnBraille = [];
+    const formarPalabras = document.querySelector(`.formarPalabras`);
+    
+    for (let i = 0; i < palabra.length; i++) {
+        const letra = palabra[i].toLowerCase();
+        if (letra in signosBraille) {
+            // Crear un objeto que represente la letra en braille con sus valores
+            const letraEnBraille = {
+                letra: letra,
+                braille: signosBraille[letra]
+            };
+            // Añadir el objeto al array palabraEnBraille
+            palabraEnBraille.push(letraEnBraille);
+            
+            const divBoton = document.createElement(`div`);
+            formarPalabras.appendChild(divBoton);
+
+            switch (letraEnBraille.letra[0]) {
+                case ' ':
+                    divBoton.classList.add(`boton`, `signoVacio`);
+                    break;
+                case '.':
+                    divBoton.classList.add(`boton`, `signoPunto`);
+                    break
+                case ',':
+                    divBoton.classList.add(`boton`, `signoComa`);
+                    break
+                case ';':
+                    divBoton.classList.add(`boton`, `signoPunto-y-coma`);
+                    break
+                case ':':
+                    divBoton.classList.add(`boton`, `signoDosPuntos`);
+                    break
+                case '-':
+                    divBoton.classList.add(`boton`, `signoGuion`);
+                    break
+                default:
+                    divBoton.classList.add(`boton`, `signo${letraEnBraille.letra.toUpperCase()[0]}`);
+            }
+
+            for (let j = 0; j < 6; j++) {
+                const spanSigno = document.createElement("span");
+                spanSigno.classList.add("punto");
+                divBoton.appendChild(spanSigno);
+                spanSigno.id = `punto${j+1}`        
+            } 
+        }
+    }
+    console.log('Palabra en braille:', palabraEnBraille);
+}
+
+
+
 function crearSignos () {
     crearFilasDeBotones(0, 0, 10);
     crearFilasDeBotones(1, 10, 20);
@@ -84,4 +139,9 @@ function crearSignos () {
 document.addEventListener("DOMContentLoaded", function() {
     crearSignos();
     ponerBotones();
+
+
+
+    let palabraParaCodificar = prompt(`palabra`);
+    crearSignosConPalabras (palabraParaCodificar);
 });

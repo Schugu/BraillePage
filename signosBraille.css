@@ -95,6 +95,45 @@
     background-color: #000;
 }
 
+/* SIGNO A CON ACENTO */
+.signoÁ > #punto1,
+.signoÁ > #punto2,
+.signoÁ > #punto3,
+.signoÁ > #punto5,
+.signoÁ > #punto6 {
+    background-color: #000;
+}
+/* SIGNO E CON ACENTO */
+.signoÉ > #punto2,
+.signoÉ > #punto3,
+.signoÉ > #punto4,
+.signoÉ > #punto6 {
+    background-color: #000;
+}
+/* SIGNO I CON ACENTO */
+.signoÍ > #punto3,
+.signoÍ > #punto4 {
+    background-color: #000;
+}
+/* SIGNO O CON ACENTO */
+.signoÓ > #punto3,
+.signoÓ > #punto4, 
+.signoÓ > #punto6 {
+    background-color: #000;
+}
+/* SIGNO U CON ACENTO */
+.signoÚ > #punto2,
+.signoÚ > #punto3, 
+.signoÚ > #punto4, 
+.signoÚ > #punto5, 
+.signoÚ > #punto6 {
+    background-color: #000;
+}
+
+
+
+
+
 
 /* Signo A */
 .signoA > #punto1 {

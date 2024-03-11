@@ -37,7 +37,7 @@ function crearPuntos (divBoton) {
     }
 };
 
-function crearFilasDeBotones (fila, inicio, final) { 
+function crearFilasDeBotonesAlfabeto (fila, inicio, final) { 
     for (let i = inicio; i < final; i++) {
         const signosBrailleLetra = listaDeLetras[i];
 
@@ -69,10 +69,10 @@ function creaAlfabeto () {
     }                          
 };
 
-function crearSignosConPalabras (palabraParaCodificar){
+function crearSignosConPalabras (palabraParaCodificar, lugarDondeCrear){
     let palabra = palabraParaCodificar;
     let palabraEnBraille = [];
-    const formarPalabras = document.querySelector(`.formarPalabras`);
+    const formarPalabras = document.querySelector(`.${lugarDondeCrear}`);
     
     for (let i = 0; i < palabra.length; i++) {
         const letra = palabra[i].toLowerCase();
@@ -89,6 +89,9 @@ function crearSignosConPalabras (palabraParaCodificar){
             formarPalabras.appendChild(divBoton);
 
             switch (letraEnBraille.letra[0]) {
+                case '¥':
+                    divBoton.classList.add(`boton`, `signoCmplt`);
+                    break;
                 case ' ':
                     divBoton.classList.add(`boton`, `signoVacio`);
                     break;
@@ -107,6 +110,21 @@ function crearSignosConPalabras (palabraParaCodificar){
                 case '-':
                     divBoton.classList.add(`boton`, `signoGuion`);
                     break
+                case 'á':
+                    divBoton.classList.add(`boton`, `signoÁ`);
+                    break
+                case 'é':
+                    divBoton.classList.add(`boton`, `signoÉ`);
+                    break
+                case 'í':
+                    divBoton.classList.add(`boton`, `signoÍ`);
+                    break
+                case 'ó':
+                    divBoton.classList.add(`boton`, `signoÓ`);
+                    break
+                case 'ú':
+                    divBoton.classList.add(`boton`, `signoÚ`);
+                    break
                 default:
                     divBoton.classList.add(`boton`, `signo${letraEnBraille.letra.toUpperCase()[0]}`);
             }
@@ -114,15 +132,33 @@ function crearSignosConPalabras (palabraParaCodificar){
             crearPuntos(divBoton);
         }
     }
-    console.log('Palabra en braille:', palabraEnBraille);
 };
 
+function crearSignoConNumeros (){
+    const divBoton = document.querySelector('.info-div3 .boton');
+    const spansSigno = divBoton.querySelectorAll('.punto');
+    
+    spansSigno.forEach((spanSigno, i) => {
+        spanSigno.classList.add('punto', 'signoGeneradorNumeros');
+        spanSigno.id = `punto${i+1}`;
+        spanSigno.textContent = `${i+1}`;
+    });
+}
+
 function crearSignos () {
-    crearFilasDeBotones(0, 0, 10);
-    crearFilasDeBotones(1, 10, 20);
-    crearFilasDeBotones(2, 20, 25);
-    crearFilasDeBotones(3, 25, 27);
+    crearFilasDeBotonesAlfabeto(0, 0, 10);
+    crearFilasDeBotonesAlfabeto(1, 10, 20);
+    crearFilasDeBotonesAlfabeto(2, 20, 25);
+    crearFilasDeBotonesAlfabeto(3, 25, 27);
     creaAlfabeto();
+
+    crearSignosConPalabras ('One piece', 'formarPalabras');
+    crearSignosConPalabras ('¥', 'info-div1');
+    crearSignosConPalabras ('felíz', 'info-div2');
+    crearSignosConPalabras ('¥', 'info-div3');
+    crearSignoConNumeros();
+    
+    
 };
 
 // MAIN
@@ -130,8 +166,4 @@ document.addEventListener("DOMContentLoaded", function() {
     crearSignos();
     ponerBotones();
 
-
-
-    let palabraParaCodificar = prompt(`palabra`);
-    crearSignosConPalabras (palabraParaCodificar);
 });

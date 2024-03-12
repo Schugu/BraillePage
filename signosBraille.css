@@ -8,8 +8,6 @@
     gap: 20px;
 }
 .boton {
-    width: 100px;
-    height: 147px;
     display: grid;
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(2, 1fr);
@@ -18,8 +16,22 @@
 }
 
 /* Medidas botones */
-.bGrande
+.bGrande {
+    width: 100px;
+    height: 147px;
+    font-size: 6em;
+}
 
+.bMediano {
+    width: 75px; 
+    height: 110.25px;
+    font-size: 4.5em; 
+}
+.bChico {
+    width: 50px; 
+    height: 73.5px;
+    font-size: 3em; 
+}
 
 
 
@@ -50,11 +62,34 @@
 .punto {
     background-color: #00000011;
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    /* width: 30px;
+    height: 30px; */
     margin: auto;
     cursor: grab;
 }
+
+.pGrande {
+    width: 30px;
+    height: 30px;
+    font-size: 20px
+}
+
+.pMediano {
+    width: 22.5px; 
+    height: 22.5px;
+    font-size: 15px 
+}
+
+.pChico {
+    width: 15px; 
+    height: 15px;
+    font-size: 10px 
+}
+
+
+
+
+
 .boton:hover {
     background-color: rgb(212, 212, 212);
 }

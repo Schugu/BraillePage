@@ -11,6 +11,7 @@
     flex-direction: column;
     gap: 100px;
 }
+
 /* PRIMERA PARTE: PRESENTACIÓN DEL TEMA */
 .info {
     display: flex;
@@ -47,7 +48,6 @@
 }
 .info-div {
     display: flex;
-    /* flex-wrap: wrap; */
     justify-content: flex-start;
     width: 100%;
     padding: 5px;
@@ -57,9 +57,6 @@
     display: flex;
     gap: 10px;
 }
-
-
-
 .info__div-p {
     display: inline-block;
     width: 30%;
@@ -124,14 +121,14 @@
     gap: 10px;
 }
 .alfabeto__letra {
-    width: 100px;
-    height: 147px;
+    /* width: 100px;
+    height: 147px; */
     border: 1px solid black;
     cursor: grab;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 6em;
+    /* font-size: 6em; */
 }
 .alfabeto__letra span {
     margin-top: -15px;
@@ -146,24 +143,6 @@
     font-size: 1.2em;
     text-wrap: balance;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* PARTE: MINIJUEGO DE LETRAS */
 .content {

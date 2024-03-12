@@ -72,7 +72,7 @@ function creaAlfabeto () {
 function crearSignosConPalabras (palabraParaCodificar, lugarDondeCrear){
     let palabra = palabraParaCodificar;
     let palabraEnBraille = [];
-    const formarPalabras = document.querySelector(`.${lugarDondeCrear}`);
+    const formarPalabras = document.getElementById(`${lugarDondeCrear}`);
     
     for (let i = 0; i < palabra.length; i++) {
         const letra = palabra[i].toLowerCase();
@@ -135,7 +135,7 @@ function crearSignosConPalabras (palabraParaCodificar, lugarDondeCrear){
 };
 
 function crearSignoConNumeros (){
-    const divBoton = document.querySelector('.info-div3 .boton');
+    const divBoton = document.querySelector('.botonConNumeros .boton');
     const spansSigno = divBoton.querySelectorAll('.punto');
     
     spansSigno.forEach((spanSigno, i) => {
@@ -153,9 +153,9 @@ function crearSignos () {
     creaAlfabeto();
 
     crearSignosConPalabras ('One piece', 'formarPalabras');
-    crearSignosConPalabras ('¥', 'info-div1');
-    crearSignosConPalabras ('felíz', 'info-div2');
-    crearSignosConPalabras ('¥', 'info-div3');
+    crearSignosConPalabras ('¥', 'info-div1__botones');
+    crearSignosConPalabras ('felíz', 'info-div2__botones');
+    crearSignosConPalabras ('¥', 'info-div3__botones');
     crearSignoConNumeros();
     
     

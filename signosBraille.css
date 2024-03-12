@@ -1,4 +1,4 @@
-.botones {
+.botonesInteractivos {
     width: 100%;
     height: auto;
     display: flex;
@@ -7,10 +7,6 @@
     flex-wrap: wrap;
     gap: 20px;
 }
-
-
-
-
 .boton {
     width: 100px;
     height: 147px;
@@ -20,6 +16,13 @@
     border: 1px solid black;
     cursor: grab;
 }
+
+/* Medidas botones */
+.bGrande
+
+
+
+
 #punto1 {
     grid-row: 1/1;
     grid-column: 1/1;

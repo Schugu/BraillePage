@@ -16,7 +16,6 @@
     display: flex;
     flex-direction: column;
     padding: 20px;
-    
 }
 .info-h1 {
     text-align: center;
@@ -28,16 +27,39 @@
     margin-bottom: 3em;
     font-size: 1.2em;
 }
-
+.info-indice {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-content: center;
+}
+.indice {
+    width: 30%;
+    height: auto;
+}
+.indice-ul{
+    list-style: none;
+}
+.container__div-info {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
 .info-div {
     display: flex;
-    flex-direction: row-reverse;
-    flex-wrap: wrap;
-    justify-content: center;
+    /* flex-wrap: wrap; */
+    justify-content: flex-start;
     width: 100%;
     padding: 5px;
     gap: 10px;
 }
+.info-div__botones {
+    display: flex;
+    gap: 10px;
+}
+
+
+
 .info__div-p {
     display: inline-block;
     width: 30%;
@@ -173,66 +195,6 @@
 
 
 
-/* SIGNOS BRAILLE */
-.botonesInteractivos {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-.boton {
-    width: 100px;
-    height: 147px;
-    display: grid;
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-columns: repeat(2, 1fr);
-    border: 1px solid black;
-    cursor: grab;
-}
-#punto1 {
-    grid-row: 1/1;
-    grid-column: 1/1;
-}
-#punto2 {
-    grid-row: 2/2;
-    grid-column: 1/1;
-}
-#punto3 {
-    grid-row: 3/3;
-    grid-column: 1/1;
-}
-#punto4 {
-    grid-row: 1/1;
-    grid-column: 2/2;
-}
-#punto5 {
-    grid-row: 2/2;
-    grid-column: 2/2;
-}
-#punto6 {
-    grid-row: 3/3;
-    grid-column: 2/2;
-}
-.punto {
-    background-color: #00000011;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    margin: auto;
-    cursor: grab;
-}
-.boton:hover {
-    background-color: rgb(212, 212, 212);
-}
-.puntoPresente {
-    background-color: #000;
-}
-
-
-
 
 .formarPalabras {
     display: flex;
@@ -245,3 +207,11 @@
 
 
 /* MEDIA QUERIES */
+@media only screen and (max-width: 750px) {
+    #info-div2{
+        flex-direction: column;
+    }
+    .info__div-p {
+        width: 100%;
+    } 
+}

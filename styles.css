@@ -9,14 +9,19 @@
     background-color: #ffebcd;
     display: flex;
     flex-direction: column;
-    gap: 100px;
+    gap: 50px;
+}
+
+.main > section {
+    border-bottom: 4px solid orangered;
+    margin: 0 20px;
+    padding-bottom: 20px;
 }
 
 /* PRIMERA PARTE: PRESENTACIÓN DEL TEMA */
 .info {
     display: flex;
     flex-direction: column;
-    padding: 20px;
 }
 .info-h1 {
     text-align: center;
@@ -37,6 +42,10 @@
 .indice {
     width: 30%;
     height: auto;
+    background-color: lightskyblue;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
 }
 .indice-ul{
     list-style: none;
@@ -48,7 +57,7 @@
 }
 .info-div {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     width: 100%;
     padding: 5px;
     gap: 10px;
@@ -70,8 +79,6 @@
     justify-content: center;
 }
 
-
-
 /* SEGUNDA PARTE: ALFABETO */
 .alfabeto{
     display: flex;
@@ -89,7 +96,7 @@
     align-items: center;
     justify-content: center;
 }
-.articleFila3 {
+.articleFila3-4, .articleFila5-6{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -121,14 +128,11 @@
     gap: 10px;
 }
 .alfabeto__letra {
-    /* width: 100px;
-    height: 147px; */
     border: 1px solid black;
     cursor: grab;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* font-size: 6em; */
 }
 .alfabeto__letra span {
     margin-top: -15px;
@@ -164,17 +168,14 @@
 
 .parrafo {
     width: 90%;
-    height: 100px;
+    height: 120px;
     border: 1px solid black;
     font-size: 2em;
+    word-wrap: break-word;
+    overflow: auto;
 }
 
-
-
-
-
-
-
+/* Formar palabras */
 .formarPalabras {
     display: flex;
     justify-content: center;

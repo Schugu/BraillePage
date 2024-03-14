@@ -44,13 +44,13 @@ const signosBraille = {
     'ú': [0, 1, 1, 1, 1, 1],
 
     // Caracteres especiales 
-    '¥': [1, 1, 1, 1, 1, 1], /* Signo Generador */
     ' ': [0, 0, 0, 0, 0, 0], /* Signo vacio */
     '.': [0, 0, 1, 0, 0, 0], /* Punto */
     ',': [0, 1, 0, 0, 0, 0], /* Coma */
     ';': [0, 1, 1, 0, 0, 0], /* Punto y coma */
     ':': [0, 1, 0, 1, 0, 0], /* Dos puntos */
     '-': [0, 0, 1, 0, 0, 1], /* Guión */
+    '¥': [1, 1, 1, 1, 1, 1], /* Signo Generador */
     
 }
 

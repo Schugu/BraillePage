@@ -259,7 +259,7 @@ function crearSignos () {
     crearSignosConPalabras ('felíz', 'info-div2__botones', 'mediano');
     crearSignosConPalabras ('¥', 'info-div3__botones', 'mediano');
 
-    crearSignosConPalabras ("abcdefghijklmnopqrstuvxyzñwáéíóú ", "botonesInteractivos", "mediano");
+    crearSignosConPalabras ("abcdefghijklmnopqrstuvxyzñwáéíóú.,:;- ", "botonesInteractivos", "mediano");
 
     crearSignosConPalabras ('One piece', 'formarPalabras', 'chico');
     crearSignoConNumeros();

@@ -13,6 +13,7 @@
     grid-template-columns: repeat(2, 1fr);
     border: 1px solid black;
     cursor: grab;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 /* Medidas botones */
@@ -62,10 +63,9 @@
 .punto {
     background-color: #00000011;
     border-radius: 50%;
-    /* width: 30px;
-    height: 30px; */
     margin: auto;
     cursor: grab;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .pGrande {

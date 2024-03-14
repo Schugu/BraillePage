@@ -10,12 +10,17 @@
     display: flex;
     flex-direction: column;
     gap: 50px;
+    padding: 0 20px;
 }
 
 .main > section {
     border-bottom: 4px solid orangered;
-    margin: 0 20px;
+    
     padding-bottom: 20px;
+}
+
+.titulosh2 {
+    font-size: 1.8em;
 }
 
 /* PRIMERA PARTE: PRESENTACIÓN DEL TEMA */
@@ -87,9 +92,7 @@
     justify-content: center;
     gap: 40px;
 }
-.alfabeto-h1{
-    font-size: 1.8em;
-}
+
 .alfabetoFila{
     display: flex;
     flex-direction: column;
@@ -133,6 +136,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 .alfabeto__letra span {
     margin-top: -15px;
@@ -152,27 +156,42 @@
 .content {
     width: 100%;
     height: auto;
-    padding: 20px;
-    border: 1px solid black;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: 40px;
 }
-
 .pantalla {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
 }
-
 .parrafo {
     width: 90%;
     height: 120px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     font-size: 2em;
     word-wrap: break-word;
     overflow: auto;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    padding: 20px;
+    border-top: 2px solid orangered;
+}
+.botones{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+}
+.botones > button {
+    color: white;
+    background-color: orangered;
+    outline: none;
+    height: auto;
+    padding: 5px;
+
 }
 
 /* Formar palabras */
@@ -182,7 +201,6 @@
     flex-wrap: wrap;
     gap: 20px;
     padding: 20px;
-
 }
 
 

@@ -175,7 +175,4 @@ document.addEventListener("DOMContentLoaded", function() {
     crearSignos();
     ponerNumerosAUnSignoGenerador();
     ponerBotonesFuncionales();
-
-
-
 });

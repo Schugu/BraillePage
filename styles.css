@@ -195,7 +195,7 @@
 }
 
 /* Formar palabras */
-.formarPalabras {
+.formarPalabrasm, .formarNumeros {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;

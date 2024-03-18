@@ -68,9 +68,6 @@ function crearFilasDeBotonesAlfabeto (fila, inicio, final, formato) {
                 divBoton.id = signosBrailleLetra.toUpperCase();
         }
 
-
-
-        
         const divLetra = document.createElement(`div`);
         divLetra.classList.add(`alfabeto__letra`);
         contenedorLetras[fila].appendChild(divLetra);
@@ -115,6 +112,10 @@ function crearSignosConPalabras (palabraParaCodificar, lugarDondeCrear, formato)
             formarPalabras.appendChild(divBoton);
 
             switch (letraEnBraille.letra[0]) {
+                case '°':  /* CAMBIAR ESTO A UNA NUEVA FUNCION QUE SEA SOLAMENTE DE NUMEROS*/
+                    divBoton.classList.add(`boton`, `signoNumero`);
+                    divBoton.id = ("signoNumero");
+                    break; // aca puedo poner un signo de mayus
                 case '¥':
                     divBoton.classList.add(`boton`, `signoCmplt`);
                     divBoton.id = ("¥");
@@ -185,16 +186,124 @@ function crearSignosConPalabras (palabraParaCodificar, lugarDondeCrear, formato)
     }
 };
 
-function crearSignoConNumeros (){
-    const divBoton = document.querySelector('.botonConNumeros .boton');
-    const spansSigno = divBoton.querySelectorAll('.punto');
+function crearSignosConNumeros (numeroParaCodificar, lugarDondeCrear, formato) {
+    let numero = numeroParaCodificar;
+    numero = Math.abs(numero);
+    numero = numero.toString();
+    const formarNumeros = document.getElementById(`${lugarDondeCrear}`);
     
-    spansSigno.forEach((spanSigno, i) => {
-        spanSigno.classList.add('punto', 'signoGeneradorNumeros');
-        spanSigno.id = `punto${i+1}`;
-        spanSigno.textContent = `${i+1}`;
-    });
+    const divBoton = document.createElement(`div`);
+    formarNumeros.appendChild(divBoton);
+    divBoton.classList.add(`boton`, `signoNumero`);
+    divBoton.id = ("signoNumero");
+    switch (formato) {
+        case 'grande':
+            divBoton.classList.add(`bGrande`);
+            break;
+        case 'mediano':
+            divBoton.classList.add(`bMediano`);
+            break;
+        case 'chico':
+            divBoton.classList.add(`bChico`);
+            break;
+    }   
+    crearPuntos(divBoton, formato);
+
+    for (let i = 0; i < numero.length; i++) {
+        const divBoton = document.createElement(`div`);
+        formarNumeros.appendChild(divBoton);
+        
+        switch (numero[i]) {
+            case '1':
+                divBoton.classList.add(`boton`, `signoA`);
+                divBoton.id = ("1");
+                break;
+            case '2':
+                divBoton.classList.add(`boton`, `signoB`);
+                divBoton.id = ("2");
+                break;
+            case '3':
+                divBoton.classList.add(`boton`, `signoC`);
+                divBoton.id = ("3");
+                break;
+            case '4':
+                divBoton.classList.add(`boton`, `signoD`);
+                divBoton.id = ("4");
+                break
+            case '5':
+                divBoton.classList.add(`boton`, `signoE`);
+                divBoton.id = ("5");
+                break
+            case '6':
+                divBoton.classList.add(`boton`, `signoF`);
+                divBoton.id = ("6");
+                break
+            case '7':
+                divBoton.classList.add(`boton`, `signoG`);
+                divBoton.id = ("7");
+                break
+            case '8':
+                divBoton.classList.add(`boton`, `signoH`);
+                divBoton.id = ("8");
+                break
+            case '9':
+                divBoton.classList.add(`boton`, `signoI`);
+                divBoton.id = ("9");
+                break
+            case '0':
+                divBoton.classList.add(`boton`, `signoJ`);
+                divBoton.id = ("0");
+                break
+        }
+
+
+        function crearPuntoFunction () {
+            const divBotonPunto = document.createElement(`div`);
+            formarNumeros.appendChild(divBotonPunto);
+            divBotonPunto.classList.add(`boton`, `signoPunto`);
+            divBotonPunto.id = ("signoPunto");
+            crearPuntos(divBotonPunto, formato);
+            switch (formato) {
+                case 'grande':
+                    divBotonPunto.classList.add(`bGrande`);
+                    break;
+                case 'mediano':
+                    divBotonPunto.classList.add(`bMediano`);
+                    break;
+                case 'chico':
+                    divBotonPunto.classList.add(`bChico`);
+                    break;
+            }
+            
+        }
+        if (numero.length > 3 && i == 0) {
+            crearPuntoFunction();
+        } else if (numero.length > 6 && i == 3) {
+            crearPuntoFunction();
+        } else if (numero.length > 9 && i == 6) {
+            crearPuntoFunction();
+        } else if (numero.length > 12 && i == 9) {
+            crearPuntoFunction();
+        } else if (numero.length > 15 && i == 12) {
+            crearPuntoFunction();
+        } 
+
+        switch (formato) {
+            case 'grande':
+                divBoton.classList.add(`bGrande`);
+                break;
+            case 'mediano':
+                divBoton.classList.add(`bMediano`);
+                break;
+            case 'chico':
+                divBoton.classList.add(`bChico`);
+                break;
+        }
+    
+        crearPuntos(divBoton, formato);        
+        }
 }
+
 
 function ponerBotones () {
     const botones = document.querySelectorAll(".botonesInteractivos .boton");
@@ -261,8 +370,10 @@ function crearSignos () {
 
     crearSignosConPalabras ("abcdefghijklmnopqrstuvxyzñwáéíóú.,:;- ", "botonesInteractivos", "mediano");
 
-    crearSignosConPalabras ('One piece', 'formarPalabras', 'chico');
-    crearSignoConNumeros();
+    crearSignosConPalabras ('°', 'formarPalabras', 'chico');
+
+
+    crearSignosConNumeros("111111111111111111", "formarNumeros", "grande");
     
 };
 

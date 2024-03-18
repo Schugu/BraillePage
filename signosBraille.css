@@ -133,6 +133,16 @@
     background-color: #000;
 }
 
+.signoNumero > #punto3,
+.signoNumero > #punto4,
+.signoNumero > #punto5,
+.signoNumero > #punto6 {
+    background-color: #000;
+}
+
+
+
+
 /* SIGNO A CON ACENTO */
 .signoÁ > #punto1,
 .signoÁ > #punto2,

@@ -51,7 +51,14 @@ const signosBraille = {
     ':': [0, 1, 0, 1, 0, 0], /* Dos puntos */
     '-': [0, 0, 1, 0, 0, 1], /* Guión */
     '¥': [1, 1, 1, 1, 1, 1], /* Signo Generador */
-    
+
+    '°': [0, 0, 1, 1, 1, 1], /* Signo de número */
+
+    // '1': [
+    //     [0, 0, 1, 1, 1, 1],
+    //     [1, 0, 0, 0, 0, 0]
+    // ]
+
 }
 
 export {signosBraille};

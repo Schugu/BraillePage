@@ -69,94 +69,41 @@ function crearFilasDeBotonesAlfabeto (fila, inicio, final, formato) {
     const contenedorBotones = document.querySelectorAll(`.alfabeto__signos`);
     const contenedorLetras = document.querySelectorAll(`.alfabeto__letras`);
 
-    for (let i = inicio; i < final; i++) {
-        const signosBrailleLetra = listaDeLetras[i];
+    for (let j = inicio; j < final; j++) {
+        const signosBrailleLetra = listaDeLetras[j];
+        const valorSignosBraille = signosBraille[signosBrailleLetra];
 
+        // Crear boton para el signo        
         const divBoton = document.createElement(`div`);
         divBoton.classList.add('boton');
-        divBoton.id = listaDeLetras[i];
-        
+        divBoton.id = signosBrailleLetra;
         contenedorBotones[fila].appendChild(divBoton);
-
-        switch (signosBrailleLetra) {
-            case '¥':
-                divBoton.classList.add(`boton`, `signoCmplt`);
-                divBoton.id = ("¥");
-                break;
-            case ' ':
-                divBoton.classList.add(`boton`, `signoVacio`);
-                divBoton.id = ("signoVacio");
-                break;
-            case '.':
-                divBoton.classList.add(`boton`, `signoPunto`);
-                divBoton.id = (".");
-                break
-            case ',':
-                divBoton.classList.add(`boton`, `signoComa`);
-                divBoton.id = (",");
-                break
-            case ';':
-                divBoton.classList.add(`boton`, `signoPunto-y-coma`);
-                divBoton.id = (";");
-                break
-            case ':':
-                divBoton.classList.add(`boton`, `signoDosPuntos`);
-                divBoton.id = (":");
-                break
-            case '-':
-                divBoton.classList.add(`boton`, `signoGuion`);
-                divBoton.id = ("-");
-                break
-            case 'á':
-                divBoton.classList.add(`boton`, `signoÁ`);
-                divBoton.id = signosBrailleLetra;
-                break
-            case 'é':
-                divBoton.classList.add(`boton`, `signoÉ`);
-                divBoton.id = signosBrailleLetra;
-                break
-            case 'í':
-                divBoton.classList.add(`boton`, `signoÍ`);
-                divBoton.id = signosBrailleLetra;
-                break
-            case 'ó':
-                divBoton.classList.add(`boton`, `signoÓ`);
-                divBoton.id = signosBrailleLetra;
-                break
-            case 'ú':
-                divBoton.classList.add(`boton`, `signoÚ`);
-                divBoton.id = signosBrailleLetra;
-                break
-            default:
-                divBoton.classList.add(`boton`, `signo${signosBrailleLetra.toUpperCase()}`);
-                divBoton.id = signosBrailleLetra;
-        }
-
-        for (let i = 0; i < 6; i++) {
-            const spanSigno = document.createElement("span");
-            spanSigno.classList.add("punto");
+  
+        
+        for (let i = 0; i < 6; i++) { // itera 6 veces, osea la cantidad de puntos que tiene un signo.
+            const spanSigno = document.createElement("span"); // Crea un span
+            spanSigno.classList.add("punto"); // Le agrega la clase 'punto'.
             
-            formatoSignosYPuntos(divBoton, spanSigno, formato);
+            formatoSignosYPuntos(divBoton, spanSigno, formato); // Llama a la funcion y le envio argumentos.
 
-            if (listaDeLetras[i] === 1) {
-                // console.log(`La letra ${letra} tiene activado el punto ${i + 1}`);
-                spanSigno.classList.add("puntoPresente");
+            // Esto significa que si la letra tiene como contendio de su array un 1 se agrega una clase.
+            if (valorSignosBraille[i] === 1) { 
+                spanSigno.classList.add("puntoPresente"); 
             } 
-            divBoton.appendChild(spanSigno);
-            spanSigno.id = `punto${i+1}`;
-        }
+            divBoton.appendChild(spanSigno); // Se agrega el span al div.
+            spanSigno.id = `punto${i+1}`; //se le da una id al span, la iteración más 1. 
+        }   
 
+        // LETRAS
         const divLetra = document.createElement(`div`);
         divLetra.classList.add(`alfabeto__letra`, 'boton');
-        
         contenedorLetras[fila].appendChild(divLetra);
         const spanLetra = document.createElement(`span`);
         divLetra.appendChild(spanLetra);
         spanLetra.textContent = signosBrailleLetra;  
-
-        formatoSignosYPuntos (divLetra, spanLetra, formato);
+        formatoSignosYPuntos (divLetra, spanLetra, formato);    
     }
-};
+}
 
 // Función que crea los signos, no lo puse en el main para no llenarlo.
 function crearSignos () {
@@ -228,4 +175,7 @@ document.addEventListener("DOMContentLoaded", function() {
     crearSignos();
     ponerNumerosAUnSignoGenerador();
     ponerBotonesFuncionales();
+
+
+
 });

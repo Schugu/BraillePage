@@ -15,6 +15,9 @@
     cursor: grab;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
+.boton:hover {
+    background-color: rgb(212, 212, 212);
+}
 
 /* Medidas botones */
 .bGrande {
@@ -22,7 +25,6 @@
     height: 147px;
     font-size: 6em;
 }
-
 .bMediano {
     width: 75px; 
     height: 110.25px;
@@ -34,8 +36,7 @@
     font-size: 3em; 
 }
 
-
-
+/* Ubicaciones puntos */
 #punto1 {
     grid-row: 1/1;
     grid-column: 1/1;
@@ -60,6 +61,8 @@
     grid-row: 3/3;
     grid-column: 2/2;
 }
+
+/* Estilo de punto y punto presente */
 .punto {
     background-color: #00000011;
     border-radius: 50%;
@@ -71,36 +74,22 @@
     background-color: #000;
 }
 
-
+/* Medidas puntos */
 .pGrande {
     width: 30px;
     height: 30px;
     font-size: 100%;
 }
-
 .pMediano {
     width: 22.5px; 
     height: 22.5px;
     font-size: 75%; 
 }
-
 .pChico {
     width: 15px; 
     height: 15px;
     font-size: 50%; 
 }
-
-
-
-
-
-.boton:hover {
-    background-color: rgb(212, 212, 212);
-}
-.puntoPresente {
-    background-color: #000;
-}
-
 
 
 
@@ -141,220 +130,6 @@
 .signoNumero > #punto4,
 .signoNumero > #punto5,
 .signoNumero > #punto6 {
-    background-color: #000;
-}
-
-
-
-
-/* SIGNO A CON ACENTO */
-.signoÁ > #punto1,
-.signoÁ > #punto2,
-.signoÁ > #punto3,
-.signoÁ > #punto5,
-.signoÁ > #punto6 {
-    background-color: #000;
-}
-/* SIGNO E CON ACENTO */
-.signoÉ > #punto2,
-.signoÉ > #punto3,
-.signoÉ > #punto4,
-.signoÉ > #punto6 {
-    background-color: #000;
-}
-/* SIGNO I CON ACENTO */
-.signoÍ > #punto3,
-.signoÍ > #punto4 {
-    background-color: #000;
-}
-/* SIGNO O CON ACENTO */
-.signoÓ > #punto3,
-.signoÓ > #punto4, 
-.signoÓ > #punto6 {
-    background-color: #000;
-}
-/* SIGNO U CON ACENTO */
-.signoÚ > #punto2,
-.signoÚ > #punto3, 
-.signoÚ > #punto4, 
-.signoÚ > #punto5, 
-.signoÚ > #punto6 {
-    background-color: #000;
-}
-
-
-
-
-
-
-/* Signo A */
-.signoA > #punto1 {
-    background-color: #000;
-}
-/* signo B */
-.signoB > #punto1, 
-.signoB > #punto2 {
-    background-color: #000;
-}
-/* signo C */
-.signoC > #punto1,
-.signoC > #punto4 {
-    background-color: #000;
-}
-/* signo D */
-.signoD > #punto1,
-.signoD > #punto4,
-.signoD > #punto5 {
-    background-color: #000;
-}
-/* signo E */
-.signoE > #punto1,
-.signoE > #punto5 {
-    background-color: #000;
-}
-/* signo F */
-.signoF > #punto1,
-.signoF > #punto2,
-.signoF > #punto4 {
-    background-color: #000;
-}
-/* signo G */
-.signoG > #punto1,
-.signoG > #punto2,
-.signoG > #punto4,
-.signoG > #punto5 {
-    background-color: #000;
-}
-/* signo H */
-.signoH > #punto1,
-.signoH > #punto2,
-.signoH > #punto5 {
-    background-color: #000;
-}
-/* signo I */
-.signoI > #punto2,
-.signoI > #punto4 {
-    background-color: #000;
-}
-/* signo J */
-.signoJ > #punto2,
-.signoJ > #punto4,
-.signoJ > #punto5 {
-    background-color: #000;
-}
-/* Signo K */
-.signoK > #punto1,
-.signoK > #punto3 {
-    background-color: #000;
-}
-/* signo L */
-.signoL > #punto1,
-.signoL > #punto3, 
-.signoL > #punto2 {
-    background-color: #000;
-}
-/* signo M */
-.signoM > #punto1,
-.signoM > #punto3,
-.signoM > #punto4 {
-    background-color: #000;
-}
-/* signo N */
-.signoN > #punto1,
-.signoN > #punto3,
-.signoN > #punto4,
-.signoN > #punto5 {
-    background-color: #000;
-}
-/* signo O */
-.signoO > #punto1,
-.signoO > #punto3,
-.signoO > #punto5 {
-    background-color: #000;
-}
-/* signo P */
-.signoP > #punto1,
-.signoP > #punto2,
-.signoP > #punto3,
-.signoP > #punto4 {
-    background-color: #000;
-}
-/* signo Q */
-.signoQ > #punto1,
-.signoQ > #punto2,
-.signoQ > #punto3,
-.signoQ > #punto4,
-.signoQ > #punto5 {
-    background-color: #000;
-}
-/* signo R */
-.signoR > #punto1,
-.signoR > #punto2,
-.signoR > #punto3,
-.signoR > #punto5 {
-    background-color: #000;
-}
-/* signo S */
-.signoS > #punto2,
-.signoS > #punto3,
-.signoS > #punto4 {
-    background-color: #000;
-}
-/* signo T */
-.signoT > #punto2,
-.signoT > #punto3,
-.signoT > #punto4,
-.signoT > #punto5 {
-    background-color: #000;
-}
-/* Signo U */
-.signoU > #punto1,
-.signoU > #punto3,
-.signoU > #punto6 {
-    background-color: #000;
-}
-/* signo V */
-.signoV > #punto1,
-.signoV > #punto3, 
-.signoV > #punto2,
-.signoV > #punto6 {
-    background-color: #000;
-}
-/* signo X */
-.signoX > #punto1,
-.signoX > #punto3,
-.signoX > #punto4,
-.signoX > #punto6 {
-    background-color: #000;
-}
-/* signo Y */
-.signoY > #punto1,
-.signoY > #punto3,
-.signoY > #punto4,
-.signoY > #punto5,
-.signoY > #punto6 {
-    background-color: #000;
-}
-/* signo Z */
-.signoZ > #punto1,
-.signoZ > #punto3,
-.signoZ > #punto5,
-.signoZ > #punto6 {
-    background-color: #000;
-}
-/* signo Ñ */
-.signoÑ > #punto1,
-.signoÑ > #punto2,
-.signoÑ > #punto4,
-.signoÑ > #punto5,
-.signoÑ > #punto6 {
-    background-color: #000;
-}
-/* signo W */
-.signoW > #punto2,
-.signoW > #punto4,
-.signoW > #punto5,
-.signoW > #punto6 {
     background-color: #000;
 }
 

@@ -12,13 +12,11 @@
     gap: 50px;
     padding: 0 20px;
 }
-
 .main > section {
     border-bottom: 4px solid orangered;
     
     padding-bottom: 20px;
 }
-
 .titulosh2 {
     font-size: 1.8em;
 }
@@ -93,7 +91,6 @@
     justify-content: center;
     gap: 40px;
 }
-
 .alfabetoFila{
     display: flex;
     flex-direction: column;
@@ -147,7 +144,6 @@
     justify-content: center;
     align-items: center;
 }
-
 .alfabeto__letra:hover {
     background-color: rgb(212, 212, 212);
 }
@@ -178,7 +174,6 @@
 .parrafo {
     width: 90%;
     height: 120px;
-    /* border: 1px solid black; */
     font-size: 2em;
     word-wrap: break-word;
     overflow: auto;
@@ -198,7 +193,6 @@
     outline: none;
     height: auto;
     padding: 5px;
-
 }
 
 /* Formar palabras */

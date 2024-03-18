@@ -67,23 +67,27 @@
     cursor: grab;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
+.puntoPresente {
+    background-color: #000;
+}
+
 
 .pGrande {
     width: 30px;
     height: 30px;
-    font-size: 20px
+    font-size: 100%;
 }
 
 .pMediano {
     width: 22.5px; 
     height: 22.5px;
-    font-size: 15px 
+    font-size: 75%; 
 }
 
 .pChico {
     width: 15px; 
     height: 15px;
-    font-size: 10px 
+    font-size: 50%; 
 }
 
 

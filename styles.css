@@ -203,24 +203,39 @@
     justify-content: center;
     align-items: center;
 }
-/* .explicacionNumeros2 {
+.explicacionNumeros2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
-} */
+}
 .explicacion__p, .expl_ejemplo__p {
     text-align: center;
     font-size: 1.2em;
 }
-#explicacionNumeros2__div {
-    width: 170px;
-}
-#explicacionNumeros2__div2 {
-    width: 590px;
+.explicacion__p2 {
+    width: 50%;
+    text-align: center;
+    font-size: 1.2em;
 }
 
+
+.contenedorSignos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.explicacionNumeros2__divRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+.expl_ejemplo__p {
+    font-size: 2em;
+}
 
 
 

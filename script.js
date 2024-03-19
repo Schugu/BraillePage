@@ -226,13 +226,13 @@ function crearSignos () {
     crearBotones('felíz', 'info-div2__botones', 'mediano');
     crearBotones('¥', 'info-div3__botones', 'mediano');
     crearBotones ("abcdefghijklmnopqrstuvxyzñwáéíóú.,:;- ", "botonesInteractivos", "mediano");
-    crearBotones ('hol', 'formarPalabras', 'chico');
+    crearBotones ('hola', 'formarPalabras', 'chico');
     crearBotones ('º', 'explicacionSigno', 'chico');
 
-    crearNumeros("1000000", "formarNumeros", "chico")
+    crearNumeros("5787005", "formarNumeros", "chico")
     crearNumeros("26", "contenedorSignos1", "chico")
     crearNumeros("4053317", "contenedorSignos2", "chico")
-};
+}
 
 // Función para ponerle numeros al signo generador del incio.
 function ponerNumerosAUnSignoGenerador () {
@@ -272,7 +272,7 @@ function ponerBotonesFuncionales () {
             parrafo.removeChild(parrafo.lastChild);
         }
     });    
-};
+}
 
 // MAIN
 document.addEventListener("DOMContentLoaded", function() {
@@ -282,5 +282,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     
-});
+})
 

@@ -91,20 +91,4 @@
     font-size: 50%; 
 }
 
-/* Signo completo */
-.signoCmplt > #punto1, 
-.signoCmplt > #punto2, 
-.signoCmplt > #punto3, 
-.signoCmplt > #punto4, 
-.signoCmplt > #punto5, 
-.signoCmplt > #punto6 {
-    background-color: #000;
-}
-/* Signo número */
-.signoNumero > #punto3,
-.signoNumero > #punto4,
-.signoNumero > #punto5,
-.signoNumero > #punto6 {
-    background-color: #000;
-}
 

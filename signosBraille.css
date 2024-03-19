@@ -18,6 +18,11 @@
 .boton:hover {
     background-color: rgb(212, 212, 212);
 }
+.contenedorSignos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
 
 /* Medidas botones */
 .bGrande {

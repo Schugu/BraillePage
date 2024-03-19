@@ -1,6 +1,7 @@
-import {signosBraille} from 'http://127.0.0.1:5500/signosBraille.js'
+import {signosBraille, numeroBraille} from 'http://127.0.0.1:5500/signosBraille.js'
 const arraySignosBraille = signosBraille; 
 const listaDeLetras = Object.keys(signosBraille); 
+const listaNumeroBraille = numeroBraille;
 
 // Función para darle formato a los puntos y a los signos. 
 function formatoSignosYPuntos (divBoton, spanSigno, formato) {
@@ -64,6 +65,62 @@ function crearBotones (palabraParaCodificar, lugarDondeCrear, formato) {
     }
 }
 
+// Funciòn para crear nùmeros
+function crearNumeros (numeroParaCodificar, lugarDondeCrear, formato) {
+    let numero = parseFloat(numeroParaCodificar);
+    numero = numero.toLocaleString("es-AR");
+    const formarPalabras = document.getElementById(`${lugarDondeCrear}`);
+    // constante que tiene como contendio el lugar donde elijamos crear una palabra.
+
+    // Crear signo de numero 
+    const divBoton = document.createElement(`div`); // Crear un div
+    formarPalabras.appendChild(divBoton); // Ubicarlo en el lugar elegido.
+    divBoton.classList.add('boton'); // Agragarle la clase 'boton'.
+    divBoton.id = "Nº";
+    for (let i = 0; i < 6; i++) { // itera 6 veces, osea la cantidad de puntos que tiene un signo.
+        const spanSigno = document.createElement("span"); // Crea un span
+        spanSigno.classList.add("punto"); // Le agrega la clase 'punto'.
+        
+        formatoSignosYPuntos(divBoton, spanSigno, formato); // Llama a la funcion y le envio argumentos.
+
+        // Esto significa que si la letra tiene como contendio de su array un 1 se agrega una clase.
+        if (listaNumeroBraille["º"][i] === 1){ 
+            spanSigno.classList.add("puntoPresente");
+        } 
+        divBoton.appendChild(spanSigno); // Se agrega el span al div.
+        spanSigno.id = `punto${i+1}`; //se le da una id al span, la iteración más 1. 
+    }
+
+    // Itera sobre cada letra de la palabra ingresada.
+    for (let i = 0; i < numero.length; i++) {
+        // Crea una nueva constante, que tendra como contenido la letra en minuscula.
+        const numInd = numero[i];
+
+        // Si la letra está en el array, realizar esto:
+        if (numInd in listaNumeroBraille) {
+            const divBoton = document.createElement(`div`); // Crear un div
+            formarPalabras.appendChild(divBoton); // Ubicarlo en el lugar elegido.
+            divBoton.classList.add('boton'); // Agragarle la clase 'boton'.
+            divBoton.id = numInd; // Agregarle como id la letra que se esta manejando.
+            
+            for (let i = 0; i < 6; i++) { // itera 6 veces, osea la cantidad de puntos que tiene un signo.
+                const spanSigno = document.createElement("span"); // Crea un span
+                spanSigno.classList.add("punto"); // Le agrega la clase 'punto'.
+                
+                formatoSignosYPuntos(divBoton, spanSigno, formato); // Llama a la funcion y le envio argumentos.
+
+                // Esto significa que si la letra tiene como contendio de su array un 1 se agrega una clase.
+                if (listaNumeroBraille[numInd][i] === 1) { 
+                    spanSigno.classList.add("puntoPresente");
+                } 
+                divBoton.appendChild(spanSigno); // Se agrega el span al div.
+                spanSigno.id = `punto${i+1}`; //se le da una id al span, la iteración más 1. 
+            }
+        }
+
+    }
+}
+
 // Función para crear el alfabeto por filas. 
 function crearFilasDeBotonesAlfabeto (fila, inicio, final, formato) { 
     const contenedorBotones = document.querySelectorAll(`.alfabeto__signos`);
@@ -105,6 +162,56 @@ function crearFilasDeBotonesAlfabeto (fila, inicio, final, formato) {
     }
 }
 
+function crearFilaDeBotonesNumero (formato) {
+    const filaN = document.getElementById("filaNumerosN");
+    const filaS = document.getElementById("filaNumerosS");
+    const filaL = document.getElementById("filaNumerosL");
+
+    for (let j = 0; j < 10; j++) {
+        const signosBrailleLetra = listaDeLetras[j];
+        const valorSignosBraille = signosBraille[signosBrailleLetra];
+
+        // Crear boton para el signo        
+        const divBoton = document.createElement(`div`);
+        divBoton.classList.add('boton');
+        divBoton.id = signosBrailleLetra;
+        filaS.appendChild(divBoton);
+  
+        for (let i = 0; i < 6; i++) { // itera 6 veces, osea la cantidad de puntos que tiene un signo.
+            const spanSigno = document.createElement("span"); // Crea un span
+            spanSigno.classList.add("punto"); // Le agrega la clase 'punto'.
+            
+            formatoSignosYPuntos(divBoton, spanSigno, formato); // Llama a la funcion y le envio argumentos.
+
+            // Esto significa que si la letra tiene como contendio de su array un 1 se agrega una clase.
+            if (valorSignosBraille[i] === 1) { 
+                spanSigno.classList.add("puntoPresente"); 
+            } 
+            divBoton.appendChild(spanSigno); // Se agrega el span al div.
+            spanSigno.id = `punto${i+1}`; //se le da una id al span, la iteración más 1. 
+        }   
+
+        // LETRAS
+        const divLetra = document.createElement(`div`);
+        divLetra.classList.add(`contendorLetraNumero`);
+        filaL.appendChild(divLetra);
+        const spanLetra = document.createElement(`span`);
+        divLetra.appendChild(spanLetra);
+        spanLetra.textContent = signosBrailleLetra;  
+        formatoSignosYPuntos (divLetra, spanLetra, formato); 
+
+        // NÚMEROS
+        const divNum = document.createElement(`div`);
+        divNum.classList.add(`contendorLetraNumero`);
+        filaN.appendChild(divNum);
+        const spanNum = document.createElement(`span`);
+        divNum.appendChild(spanNum);
+        let numerosParaFila = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+        spanNum.textContent = numerosParaFila[j];  
+        formatoSignosYPuntos (divNum, spanNum, formato); 
+    }
+}
+
 // Función que crea los signos, no lo puse en el main para no llenarlo.
 function crearSignos () {
     crearFilasDeBotonesAlfabeto(0, 0, 10, 'mediano');
@@ -113,20 +220,18 @@ function crearSignos () {
     crearFilasDeBotonesAlfabeto(3, 25, 27, 'mediano');
     crearFilasDeBotonesAlfabeto(4, 27, 32, 'mediano');
     crearFilasDeBotonesAlfabeto(5, 32, 38, 'mediano');
-
+    crearFilaDeBotonesNumero ("mediano");
 
     crearBotones('¥', 'info-div1__botones', 'mediano');
     crearBotones('felíz', 'info-div2__botones', 'mediano');
     crearBotones('¥', 'info-div3__botones', 'mediano');
- 
     crearBotones ("abcdefghijklmnopqrstuvxyzñwáéíóú.,:;- ", "botonesInteractivos", "mediano");
+    crearBotones ('hol', 'formarPalabras', 'chico');
+    crearBotones ('º', 'explicacionSigno', 'chico');
 
-    crearBotones ('°', 'formarPalabras', 'chico');
-
-
-    // crearSignosConNumeros("111111111111111111", "formarNumeros", "grande");
-
-    crearBotones('Hola, como estas', 'formarPalabraNuevo', 'grande');
+    crearNumeros("1000000", "formarNumeros", "chico")
+    crearNumeros("26", "contenedorSignos1", "chico")
+    crearNumeros("4053317", "contenedorSignos2", "chico")
 };
 
 // Función para ponerle numeros al signo generador del incio.
@@ -169,10 +274,13 @@ function ponerBotonesFuncionales () {
     });    
 };
 
-
 // MAIN
 document.addEventListener("DOMContentLoaded", function() {
     crearSignos();
     ponerNumerosAUnSignoGenerador();
     ponerBotonesFuncionales();
+
+
+    
 });
+

@@ -7,6 +7,12 @@
     flex-wrap: wrap;
     gap: 20px;
 }
+.contenedorBotones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
 .boton {
     display: grid;
     grid-template-rows: repeat(3, 1fr);

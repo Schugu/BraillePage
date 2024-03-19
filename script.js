@@ -32,8 +32,10 @@ function formatoSignosYPuntos (divBoton, spanSigno, formato) {
 // Función para crear botones (simbolos).
 function crearBotones (palabraParaCodificar, lugarDondeCrear, formato) {
     let palabra = palabraParaCodificar;
-    const formarPalabras = document.getElementById(`${lugarDondeCrear}`);
-    // constante que tiene como contendio el lugar donde elijamos crear una palabra.
+    const lugarDeCreacion = document.getElementById(`${lugarDondeCrear}`);
+    const contenedorBotones = document.createElement('div');
+    lugarDeCreacion.appendChild(contenedorBotones);
+    contenedorBotones.classList.add('contenedorBotones');
 
     // Itera sobre cada letra de la palabra ingresada.
     for (let i = 0; i < palabra.length; i++) {
@@ -43,7 +45,7 @@ function crearBotones (palabraParaCodificar, lugarDondeCrear, formato) {
         // Si la letra está en el array, realizar esto:
         if (letra in arraySignosBraille) {
             const divBoton = document.createElement(`div`); // Crear un div
-            formarPalabras.appendChild(divBoton); // Ubicarlo en el lugar elegido.
+            contenedorBotones.appendChild(divBoton); // Ubicarlo en el lugar elegido.
             divBoton.classList.add('boton'); // Agragarle la clase 'boton'.
             divBoton.id = letra; // Agregarle como id la letra que se esta manejando.
             
@@ -69,12 +71,16 @@ function crearBotones (palabraParaCodificar, lugarDondeCrear, formato) {
 function crearNumeros (numeroParaCodificar, lugarDondeCrear, formato) {
     let numero = parseFloat(numeroParaCodificar);
     numero = numero.toLocaleString("es-AR");
-    const formarPalabras = document.getElementById(`${lugarDondeCrear}`);
+
+    const lugarDeCreacion = document.getElementById(`${lugarDondeCrear}`);
+    const contenedorBotones = document.createElement('div');
+    lugarDeCreacion.appendChild(contenedorBotones);
+    contenedorBotones.classList.add('contenedorBotones');
     // constante que tiene como contendio el lugar donde elijamos crear una palabra.
 
     // Crear signo de numero 
     const divBoton = document.createElement(`div`); // Crear un div
-    formarPalabras.appendChild(divBoton); // Ubicarlo en el lugar elegido.
+    contenedorBotones.appendChild(divBoton); // Ubicarlo en el lugar elegido.
     divBoton.classList.add('boton'); // Agragarle la clase 'boton'.
     divBoton.id = "Nº";
     for (let i = 0; i < 6; i++) { // itera 6 veces, osea la cantidad de puntos que tiene un signo.
@@ -99,7 +105,7 @@ function crearNumeros (numeroParaCodificar, lugarDondeCrear, formato) {
         // Si la letra está en el array, realizar esto:
         if (numInd in listaNumeroBraille) {
             const divBoton = document.createElement(`div`); // Crear un div
-            formarPalabras.appendChild(divBoton); // Ubicarlo en el lugar elegido.
+            contenedorBotones.appendChild(divBoton); // Ubicarlo en el lugar elegido.
             divBoton.classList.add('boton'); // Agragarle la clase 'boton'.
             divBoton.id = numInd; // Agregarle como id la letra que se esta manejando.
             
@@ -222,21 +228,21 @@ function crearSignos () {
     crearFilasDeBotonesAlfabeto(5, 32, 38, 'mediano');
     crearFilaDeBotonesNumero ("mediano");
 
-    crearBotones('¥', 'info-div1__botones', 'mediano');
-    crearBotones('felíz', 'info-div2__botones', 'mediano');
-    crearBotones('¥', 'info-div3__botones', 'mediano');
+    crearBotones('¥', 'info-div1', 'mediano');
+    crearBotones('felíz', 'info-div2', 'mediano');
+    crearBotones('¥', 'info-div3', 'mediano');
     crearBotones ("abcdefghijklmnopqrstuvxyzñwáéíóú.,:;- ", "botonesInteractivos", "mediano");
     crearBotones ('hola', 'formarPalabras', 'chico');
-    crearBotones ('º', 'explicacionSigno', 'chico');
+    crearBotones ('º', 'explicacionNumeros1', 'chico');
 
     crearNumeros("5787005", "formarNumeros", "chico")
-    crearNumeros("26", "contenedorSignos1", "chico")
-    crearNumeros("4053317", "contenedorSignos2", "chico")
+    crearNumeros("26", "explicacionNumeros2__div", "chico")
+    crearNumeros("4053317", "explicacionNumeros2__div2", "chico")
 }
 
 // Función para ponerle numeros al signo generador del incio.
 function ponerNumerosAUnSignoGenerador () {
-    let div = document.getElementById('info-div3__botones');
+    let div = document.getElementById('info-div3');
     let boton = div.querySelector(".boton");
     let spans = boton.querySelectorAll("span");
     spans.forEach((span, i) => {

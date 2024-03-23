@@ -13,25 +13,33 @@
     padding: 0 20px;
 }
 .main > section {
-    border-bottom: 4px solid #ff4500;
+    border-top: 4px solid #ff4500;
     padding-bottom: 20px;
 }
-.main > section:last-child{
+.main > section:first-child {
     border: none;
 }
+
 .titulosh2 {
     font-size: 2.7em;
+    background-color: #ff885c;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
 }
 
 /* PRIMERA PARTE: PRESENTACIÓN DEL TEMA */
 .info {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 .info-h1 {
+    width: 50%;
     text-align: center;
-    padding: 20px;
+    margin: 20px;
     font-size: 3.5em;
+    border-bottom: 4px solid #ff4500;
 }
 .info-p {
     text-align: center;
@@ -47,13 +55,31 @@
 .indice {
     width: 30%;
     height: auto;
-    background-color: #87cefa;
+    background-color: #add8e6;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
     padding: 20px;
 }
-.indice-ul{
-    list-style: none;
+.indice-h2 {
+    font-size: 1.5em;
+    text-align: center;
+}
+.indice-lista{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.indice-lista__a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    border: 1px solid #000;
+    padding: 10px;
+}
+.indice-lista__a:hover {
+    background-color: #c6f1ff;
 }
 .container__div-info {
     display: flex;
@@ -286,7 +312,7 @@
     justify-content: center;
     align-items: center;
     gap: 40px;
-    padding: 20px;
+    margin-bottom: 100px;
 }
 .formarPalabra__div, .formarNumero__div {
     display: flex;
@@ -319,9 +345,6 @@
 }
 .formarPalabraDiv__button:hover, .formarNumeroDiv__button:hover {
     background-color: #d43901;
-}
-.formarNumeros {
-    margin-bottom: 100px;
 }
 
 /* FOOTER */

@@ -18,7 +18,7 @@
     padding-bottom: 20px;
 }
 .titulosh2 {
-    font-size: 3em;
+    font-size: 2.7em;
 }
 
 /* PRIMERA PARTE: PRESENTACIÓN DEL TEMA */
@@ -270,20 +270,61 @@
 }
 .botones > button {
     color: white;
-    background-color: orangered;
-    outline: none;
+    background-color: #ff4500;
     height: auto;
-    padding: 5px;
+    padding: 10px;
+    font-size: 20px;
+    cursor: grab;
+}
+.botones > button:hover {
+    background-color: #d43901;
 }
 
 /* Formar palabras */
-.formarPalabras, .formarNumeros, .formarPalabraNuevo {
+.formarPalabras, .formarNumeros{
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
+    align-items: center;
+    gap: 40px;
     padding: 20px;
 }
+.formarPlabra__div {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.formarPalabraDiv__input {
+    border: none;
+    outline: none;
+    height: 50px;
+    padding: 20px;
+    font-size: 20px;
+    background-color: transparent;  
+    border: 1px solid #ff4500;
+    border-bottom: 4px solid #ff4500;
+}
+.formarPalabraDiv__input:focus {
+    background-color: #fcdeb2;
+}
+
+.formarPalabraDiv__button {
+    height: 50px;
+    font-size: 20px;
+    text-align: center; 
+    vertical-align: middle; 
+    line-height: normal; 
+    padding: 10px 20px; 
+    cursor: grab;
+    color: #fff;
+    background-color: #ff4500;
+}
+.formarPalabraDiv__button:hover {
+    background-color: #d43901;
+}
+
+
 
 
 /* MEDIA QUERIES */

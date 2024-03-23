@@ -1,3 +1,5 @@
+"use strict";
+
 import {signosBraille, numeroBraille} from 'http://127.0.0.1:5500/signosBraille.js'
 const arraySignosBraille = signosBraille; 
 const listaDeLetras = Object.keys(signosBraille); 
@@ -32,10 +34,20 @@ function formatoSignosYPuntos (divBoton, spanSigno, formato) {
 // Función para crear botones (simbolos).
 function crearBotones (palabraParaCodificar, lugarDondeCrear, formato) {
     let palabra = palabraParaCodificar;
+
+    // Asignar lugar de creación
     const lugarDeCreacion = document.getElementById(`${lugarDondeCrear}`);
-    const contenedorBotones = document.createElement('div');
-    lugarDeCreacion.appendChild(contenedorBotones);
+
+    // Crear fragmento
+    const fragmento = document.createDocumentFragment();
+
+    // Crear un div, almacenarlo en el fragmento y converirtlo en una constante
+    const contenedorBotones = fragmento.appendChild(document.createElement('div'));
     contenedorBotones.classList.add('contenedorBotones');
+
+    // Agregar el fragmento al DOM    
+    lugarDeCreacion.appendChild(fragmento);
+    
 
     // Itera sobre cada letra de la palabra ingresada.
     for (let i = 0; i < palabra.length; i++) {
@@ -72,11 +84,16 @@ function crearNumeros (numeroParaCodificar, lugarDondeCrear, formato) {
     let numero = parseFloat(numeroParaCodificar);
     numero = numero.toLocaleString("es-AR");
 
+    // Para elegir donde queremos crear en base a id de nuestro HTML.
     const lugarDeCreacion = document.getElementById(`${lugarDondeCrear}`);
-    const contenedorBotones = document.createElement('div');
-    lugarDeCreacion.appendChild(contenedorBotones);
+
+    // Para crear un fragmento, añadirle un div, y luego ponerle una clase.s
+    const fragmento = document.createDocumentFragment();
+    const contenedorBotones = fragmento.appendChild(document.createElement('div'));
     contenedorBotones.classList.add('contenedorBotones');
-    // constante que tiene como contendio el lugar donde elijamos crear una palabra.
+
+    // Para agregar el fragmento al DOM.
+    lugarDeCreacion.appendChild(fragmento);
 
     // Crear signo de numero 
     const divBoton = document.createElement(`div`); // Crear un div
@@ -232,10 +249,10 @@ function crearSignos () {
     crearBotones('felíz', 'info-div2', 'mediano');
     crearBotones('¥', 'info-div3', 'mediano');
     crearBotones ("abcdefghijklmnopqrstuvxyzñwáéíóú.,:;- ", "botonesInteractivos", "mediano");
-    crearBotones ('hola', 'formarPalabras', 'chico');
+    // crearBotones ('hola', 'formarPalabras', 'chico');
     crearBotones ('º', 'explicacionNumeros1', 'chico');
 
-    crearNumeros("5787005", "formarNumeros", "chico")
+    crearNumeros("1241245121515", "formarNumeros", "chico")
     crearNumeros("26", "explicacionNumeros2__div", "chico")
     crearNumeros("4053317", "explicacionNumeros2__div2", "chico")
 }
@@ -280,12 +297,47 @@ function ponerBotonesFuncionales () {
     });    
 }
 
+function hacerPalabraConInput () {
+    const boton = document.getElementById('enviarPalabra')
+
+    function realizarFuncion () {
+        const palabra = document.getElementById('textPalabra').value;
+        const regex = /^[a-zA-Z\s.,;:-]+$/;
+
+        if (!regex.test(palabra)) {
+            document.getElementById('textPalabra').value = ''; // Si el valor no coincide con la expresión regular, se borra
+        } else if (palabra.trim() !== '') { 
+            const contenedorBotones = document.getElementById('formarPalabras');
+            const hijoContenedorBotones = contenedorBotones.querySelector('.contenedorBotones');
+
+            if (hijoContenedorBotones) {
+                contenedorBotones.removeChild(hijoContenedorBotones);
+            } 
+
+            crearBotones (palabra, 'formarPalabras', 'mediano');
+        }
+        
+        document.getElementById('textPalabra').value = '';
+    }
+
+    // Agregar event listener para el click
+    boton.addEventListener("click", realizarFuncion);
+
+    // Agregar event listener para la tecla "Enter"
+    document.getElementById('textPalabra').addEventListener("keypress", function(event) {
+        // Verificar si la tecla presionada es "Enter" (cuyo código es 13)
+        if (event.key === "Enter") {
+            realizarFuncion(); // Llamar a la función handleClick si se presiona "Enter"
+        }
+    });
+}
+
 // MAIN
 document.addEventListener("DOMContentLoaded", function() {
     crearSignos();
     ponerNumerosAUnSignoGenerador();
     ponerBotonesFuncionales();
-
+    hacerPalabraConInput();
 
     
 })

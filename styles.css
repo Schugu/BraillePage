@@ -220,7 +220,6 @@
     font-size: 1.2em;
     text-wrap: balance;
 }
-
 .explicacionNumeros2__divRow {
     display: flex;
     justify-content: center;
@@ -235,8 +234,6 @@
 .expl_ejemplo__p {
     font-size: 2em;
 }
-
-
 
 /* PARTE: MINIJUEGO DE LETRAS */
 .content {
@@ -296,7 +293,6 @@
     justify-content: center;
     gap: 10px;
 }
-
 .formarPalabraDiv__input, .formarNumeroDiv__input {
     border: none;
     outline: none;
@@ -310,7 +306,6 @@
 .formarPalabraDiv__input:focus, .formarNumeroDiv__input:focus {
     background-color: #fcdeb2;
 }
-
 .formarPalabraDiv__button, .formarNumeroDiv__button {
     height: 50px;
     font-size: 20px;
@@ -348,7 +343,6 @@
 .footer__a:hover {
     color: #ff4500;
 }
-
 .footer__div {
     display: flex;
     align-items: center;
@@ -360,18 +354,17 @@
 }
 .footerDiv__icono {
     filter: invert(100%);
-    width: 2em; /* 3em*/
-    height: 2.5em; /* 3.5em*/
-}
-svg defs {
-    filter: url(#orange-filter);
+    width: 2em; 
+    height: 2.5em; 
 }
 .footerDiv__a:hover{
     filter: url(#orange-filter);
 }
-
-
-
+.footer__div:nth-child(2) .footerDiv__a:nth-child(2) .footerDiv__icono {
+    width: 1.75em; 
+    height: 2.25em;
+    margin-top: 2px; 
+}
 
 
 /* MEDIA QUERIES */

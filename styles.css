@@ -13,9 +13,11 @@
     padding: 0 20px;
 }
 .main > section {
-    border-bottom: 4px solid orangered;
-    
+    border-bottom: 4px solid #ff4500;
     padding-bottom: 20px;
+}
+.main > section:last-child{
+    border: none;
 }
 .titulosh2 {
     font-size: 2.7em;
@@ -45,7 +47,7 @@
 .indice {
     width: 30%;
     height: auto;
-    background-color: lightskyblue;
+    background-color: #87cefa;
     display: flex;
     justify-content: center;
     padding: 20px;
@@ -74,7 +76,7 @@
     text-wrap: balance;
 }
 #signoGeneradorNumeros {
-    color: white;
+    color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -127,7 +129,7 @@
     gap: 10px;
 }
 .alfabeto__letras > .alfabeto__letra {
-    border: 1px solid black;
+    border: 1px solid #000;
     cursor: grab;
     display: flex;
     justify-content: center;
@@ -184,7 +186,7 @@
     gap: 20px;
 }
 .contendorLetraNumero {
-    border: 1px solid black;
+    border: 1px solid #000;
     cursor: grab;
     display: flex;
     justify-content: center;
@@ -260,7 +262,7 @@
     overflow: auto;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
     padding: 20px;
-    border-top: 2px solid orangered;
+    border-top: 2px solid #ff4500;
 }
 .botones{
     display: flex;
@@ -269,7 +271,7 @@
     padding: 10px;
 }
 .botones > button {
-    color: white;
+    color: #fff;
     background-color: #ff4500;
     height: auto;
     padding: 10px;
@@ -289,13 +291,13 @@
     gap: 40px;
     padding: 20px;
 }
-.formarPlabra__div {
+.formarPalabra__div, .formarNumero__div {
     display: flex;
     justify-content: center;
     gap: 10px;
 }
 
-.formarPalabraDiv__input {
+.formarPalabraDiv__input, .formarNumeroDiv__input {
     border: none;
     outline: none;
     height: 50px;
@@ -305,11 +307,11 @@
     border: 1px solid #ff4500;
     border-bottom: 4px solid #ff4500;
 }
-.formarPalabraDiv__input:focus {
+.formarPalabraDiv__input:focus, .formarNumeroDiv__input:focus {
     background-color: #fcdeb2;
 }
 
-.formarPalabraDiv__button {
+.formarPalabraDiv__button, .formarNumeroDiv__button {
     height: 50px;
     font-size: 20px;
     text-align: center; 
@@ -320,9 +322,54 @@
     color: #fff;
     background-color: #ff4500;
 }
-.formarPalabraDiv__button:hover {
+.formarPalabraDiv__button:hover, .formarNumeroDiv__button:hover {
     background-color: #d43901;
 }
+.formarNumeros {
+    margin-bottom: 100px;
+}
+
+/* FOOTER */
+.footer {
+    width: 100%;
+    height: 50px;
+    background-color: #000;
+    border-top: 4px solid #ff4500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.footer__a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 30px;
+}
+.footer__a:hover {
+    color: #ff4500;
+}
+
+.footer__div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.footerDiv__a{
+    display: inline-flex;
+}
+.footerDiv__icono {
+    filter: invert(100%);
+    width: 2em; /* 3em*/
+    height: 2.5em; /* 3.5em*/
+}
+svg defs {
+    filter: url(#orange-filter);
+}
+.footerDiv__a:hover{
+    filter: url(#orange-filter);
+}
+
 
 
 

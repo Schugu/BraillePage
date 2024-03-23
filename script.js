@@ -237,6 +237,7 @@ function crearFilaDeBotonesNumero (formato) {
 
 // Función que crea los signos, no lo puse en el main para no llenarlo.
 function crearSignos () {
+    // PARTE DE EXPLICAICONES NO BORRAR POR NADA DEL MUNDO.
     crearFilasDeBotonesAlfabeto(0, 0, 10, 'mediano');
     crearFilasDeBotonesAlfabeto(1, 10, 20, 'mediano');
     crearFilasDeBotonesAlfabeto(2, 20, 25, 'mediano');
@@ -244,15 +245,11 @@ function crearSignos () {
     crearFilasDeBotonesAlfabeto(4, 27, 32, 'mediano');
     crearFilasDeBotonesAlfabeto(5, 32, 38, 'mediano');
     crearFilaDeBotonesNumero ("mediano");
-
     crearBotones('¥', 'info-div1', 'mediano');
     crearBotones('felíz', 'info-div2', 'mediano');
     crearBotones('¥', 'info-div3', 'mediano');
     crearBotones ("abcdefghijklmnopqrstuvxyzñwáéíóú.,:;- ", "botonesInteractivos", "mediano");
-    // crearBotones ('hola', 'formarPalabras', 'chico');
     crearBotones ('º', 'explicacionNumeros1', 'chico');
-
-    crearNumeros("1241245121515", "formarNumeros", "chico")
     crearNumeros("26", "explicacionNumeros2__div", "chico")
     crearNumeros("4053317", "explicacionNumeros2__div2", "chico")
 }
@@ -297,7 +294,7 @@ function ponerBotonesFuncionales () {
     });    
 }
 
-function hacerPalabraConInput () {
+function AgregarPalabraConInput () {
     const boton = document.getElementById('enviarPalabra')
 
     function realizarFuncion () {
@@ -332,13 +329,48 @@ function hacerPalabraConInput () {
     });
 }
 
+function AgregarNumeroConInput () {
+    const boton = document.getElementById('enviarNumero')
+
+    function realizarFuncion () {
+        const numero = document.getElementById('textNumero').value;
+        const regex = /^\d+$/;
+
+        if (!regex.test(numero)) {
+            document.getElementById('textNumero').value = ''; // Si el valor no coincide con la expresión regular, se borra
+        } else if (numero.trim() !== '') { 
+            const contenedorBotones = document.getElementById('formarNumeros');
+            const hijoContenedorBotones = contenedorBotones.querySelector('.contenedorBotones');
+
+            if (hijoContenedorBotones) {
+                contenedorBotones.removeChild(hijoContenedorBotones);
+            } 
+
+            crearNumeros (numero, 'formarNumeros', 'mediano');
+        }
+        
+        document.getElementById('textNumero').value = '';
+    }
+
+    // Agregar event listener para el click
+    boton.addEventListener("click", realizarFuncion);
+
+    // Agregar event listener para la tecla "Enter"
+    document.getElementById('textNumero').addEventListener("keypress", function(event) {
+        // Verificar si la tecla presionada es "Enter" (cuyo código es 13)
+        if (event.key === "Enter") {
+            realizarFuncion(); // Llamar a la función handleClick si se presiona "Enter"
+        }
+    });
+}
+
 // MAIN
 document.addEventListener("DOMContentLoaded", function() {
     crearSignos();
     ponerNumerosAUnSignoGenerador();
     ponerBotonesFuncionales();
-    hacerPalabraConInput();
-
+    AgregarPalabraConInput();
+    AgregarNumeroConInput();
     
 })
 

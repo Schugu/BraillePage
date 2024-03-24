@@ -338,7 +338,5 @@ document.addEventListener("DOMContentLoaded", function() {
     ponerBotonesFuncionales();
     AgregarPalabraConInput();
     AgregarNumeroConInput();
-
-    
 })
 

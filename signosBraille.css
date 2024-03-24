@@ -17,9 +17,10 @@
     display: grid;
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(2, 1fr);
-    border: 1px solid black;
+    border: 1px solid #000000;
     cursor: grab;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    transition: background-color 0.05s ease-in-out;
 }
 .boton:hover {
     background-color: rgb(212, 212, 212);

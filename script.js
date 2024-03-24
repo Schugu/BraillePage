@@ -10,31 +10,52 @@ function formatoSignosYPuntos (divBoton, spanSigno, formato) {
     switch (formato) {
         case 'grande':
             spanSigno.classList.add(`pGrande`);
-            break;
-        case 'mediano':
-            spanSigno.classList.add(`pMediano`);
-            break;    
-        case 'chico':
-            spanSigno.classList.add(`pChico`);
-            break;                
-    } 
-    switch (formato) {
-        case 'grande':
             divBoton.classList.add(`bGrande`);
             break;
         case 'mediano':
+            spanSigno.classList.add(`pMediano`);
             divBoton.classList.add(`bMediano`);
-            break;
+            break;    
         case 'chico':
+            spanSigno.classList.add(`pChico`);
             divBoton.classList.add(`bChico`);
-            break;
+            break;                
+    } 
+}
+
+function codificador (cadenaParaCodificar, array, contenedorBotones, formato) {
+    // Itera sobre cada letra de la palabra ingresada.
+    for (let i = 0; i < cadenaParaCodificar.length; i++) {
+        // Crea una nueva constante, que tendra como contenido la letra en minuscula.
+        const caracter = cadenaParaCodificar[i].toLowerCase();
+
+        // Si la letra está en el array, realizar esto:
+        if (caracter in array) {
+            const divBoton = document.createElement(`div`); // Crear un div
+            contenedorBotones.appendChild(divBoton); // Ubicarlo en el lugar elegido.
+            divBoton.classList.add('boton'); // Agragarle la clase 'boton'.
+            divBoton.id = caracter; // Agregarle como id la letra que se esta manejando.
+            
+            for (let i = 0; i < 6; i++) { // itera 6 veces, osea la cantidad de puntos que tiene un signo.
+                const spanSigno = document.createElement("span"); // Crea un span
+                spanSigno.classList.add("punto"); // Le agrega la clase 'punto'.
+                
+                formatoSignosYPuntos(divBoton, spanSigno, formato); // Llama a la funcion y le envio argumentos.
+
+                // Esto significa que si la letra tiene como contendio de su array un 1 se agrega una clase.
+                if (array[caracter][i] === 1) { 
+                    spanSigno.classList.add("puntoPresente");
+                } 
+                divBoton.appendChild(spanSigno); // Se agrega el span al div.
+                spanSigno.id = `punto${i+1}`; //se le da una id al span, la iteración más 1. 
+            }
+        }
     }
+
 }
 
 // Función para crear botones (simbolos).
 function crearBotones (palabraParaCodificar, lugarDondeCrear, formato) {
-    let palabra = palabraParaCodificar;
-
     // Asignar lugar de creación
     const lugarDeCreacion = document.getElementById(`${lugarDondeCrear}`);
 
@@ -48,35 +69,7 @@ function crearBotones (palabraParaCodificar, lugarDondeCrear, formato) {
     // Agregar el fragmento al DOM    
     lugarDeCreacion.appendChild(fragmento);
     
-
-    // Itera sobre cada letra de la palabra ingresada.
-    for (let i = 0; i < palabra.length; i++) {
-        // Crea una nueva constante, que tendra como contenido la letra en minuscula.
-        const letra = palabra[i].toLowerCase();
-
-        // Si la letra está en el array, realizar esto:
-        if (letra in arraySignosBraille) {
-            const divBoton = document.createElement(`div`); // Crear un div
-            contenedorBotones.appendChild(divBoton); // Ubicarlo en el lugar elegido.
-            divBoton.classList.add('boton'); // Agragarle la clase 'boton'.
-            divBoton.id = letra; // Agregarle como id la letra que se esta manejando.
-            
-            for (let i = 0; i < 6; i++) { // itera 6 veces, osea la cantidad de puntos que tiene un signo.
-                const spanSigno = document.createElement("span"); // Crea un span
-                spanSigno.classList.add("punto"); // Le agrega la clase 'punto'.
-                
-                formatoSignosYPuntos(divBoton, spanSigno, formato); // Llama a la funcion y le envio argumentos.
-
-                // Esto significa que si la letra tiene como contendio de su array un 1 se agrega una clase.
-                if (arraySignosBraille[letra][i] === 1) { 
-                    spanSigno.classList.add("puntoPresente");
-                } 
-                divBoton.appendChild(spanSigno); // Se agrega el span al div.
-                spanSigno.id = `punto${i+1}`; //se le da una id al span, la iteración más 1. 
-            }
-        }
-
-    }
+    codificador (palabraParaCodificar, arraySignosBraille, contenedorBotones, formato);
 }
 
 // Funciòn para crear nùmeros
@@ -114,34 +107,8 @@ function crearNumeros (numeroParaCodificar, lugarDondeCrear, formato) {
         spanSigno.id = `punto${i+1}`; //se le da una id al span, la iteración más 1. 
     }
 
-    // Itera sobre cada letra de la palabra ingresada.
-    for (let i = 0; i < numero.length; i++) {
-        // Crea una nueva constante, que tendra como contenido la letra en minuscula.
-        const numInd = numero[i];
 
-        // Si la letra está en el array, realizar esto:
-        if (numInd in listaNumeroBraille) {
-            const divBoton = document.createElement(`div`); // Crear un div
-            contenedorBotones.appendChild(divBoton); // Ubicarlo en el lugar elegido.
-            divBoton.classList.add('boton'); // Agragarle la clase 'boton'.
-            divBoton.id = numInd; // Agregarle como id la letra que se esta manejando.
-            
-            for (let i = 0; i < 6; i++) { // itera 6 veces, osea la cantidad de puntos que tiene un signo.
-                const spanSigno = document.createElement("span"); // Crea un span
-                spanSigno.classList.add("punto"); // Le agrega la clase 'punto'.
-                
-                formatoSignosYPuntos(divBoton, spanSigno, formato); // Llama a la funcion y le envio argumentos.
-
-                // Esto significa que si la letra tiene como contendio de su array un 1 se agrega una clase.
-                if (listaNumeroBraille[numInd][i] === 1) { 
-                    spanSigno.classList.add("puntoPresente");
-                } 
-                divBoton.appendChild(spanSigno); // Se agrega el span al div.
-                spanSigno.id = `punto${i+1}`; //se le da una id al span, la iteración más 1. 
-            }
-        }
-
-    }
+    codificador (numero, listaNumeroBraille, contenedorBotones, formato);
 }
 
 // Función para crear el alfabeto por filas. 
@@ -299,7 +266,7 @@ function AgregarPalabraConInput () {
 
     function realizarFuncion () {
         const palabra = document.getElementById('textPalabra').value;
-        const regex = /^[a-zA-Z\s.,;:-]+$/;
+        const regex = /^[a-zA-ZáéíóúÁÉÍÓÚ\s.,;:-]+$/;
 
         if (!regex.test(palabra)) {
             document.getElementById('textPalabra').value = ''; // Si el valor no coincide con la expresión regular, se borra
@@ -371,6 +338,7 @@ document.addEventListener("DOMContentLoaded", function() {
     ponerBotonesFuncionales();
     AgregarPalabraConInput();
     AgregarNumeroConInput();
+
     
 })
 

@@ -26,6 +26,7 @@
     padding: 10px;
     width: 100%;
     text-align: center;
+    text-wrap: balance;
 }
 
 /* PRIMERA PARTE: PRESENTACIÓN DEL TEMA */
@@ -35,7 +36,7 @@
     align-items: center;
 }
 .info-h1 {
-    width: 50%;
+    width: 100%;
     text-align: center;
     margin: 20px;
     font-size: 3.5em;
@@ -116,33 +117,25 @@
     align-items: center;
     justify-content: center;
     gap: 40px;
+    width: 100%;
 }
 .alfabetoFila{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: fit-content;
 }
 .articleFila3-4, .articleFila5-6{
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
     justify-content: center;
     align-items: flex-start;
     gap: 20px;
-}
-#alfabetoF3-p {
-    width: 500px;
-}
-#alfabetoF4-p {
-    width: 200px;
 }
 .alfabeto__signos {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 100%;
     padding: 5px;
     gap: 10px;
 }
@@ -150,7 +143,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 100%;
     padding: 5px;
     gap: 10px;
 }
@@ -174,11 +166,16 @@
     background-color: rgb(212, 212, 212);
 }
 .alfabeto-p{
-    display: inline-block;
-    width: 85%;
+    max-width: 900px;
     text-align: center;
     font-size: 1.2em;
     text-wrap: balance;
+}
+#alfabetoF3-p {
+    max-width: 450px;
+}
+#alfabetoF4-p {
+    max-width: 200px;
 }
 
 /* TERCERA PARTE: NÚMEROS */
@@ -208,6 +205,7 @@
 }
 .filaNumeros{
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
 }
@@ -316,12 +314,15 @@
 }
 .formarPalabra__div, .formarNumero__div {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
+    flex-grow: 2;
 }
 .formarPalabraDiv__input, .formarNumeroDiv__input {
     border: none;
     outline: none;
+    flex-grow: 1;
     height: 50px;
     padding: 20px;
     font-size: 20px;
@@ -398,4 +399,15 @@
     .info__div-p {
         width: 100%;
     } 
+}
+@media only screen and (max-width: 605px) {
+    .indice {
+        display: none;
+    }
+    .articleFila3-4, .articleFila5-6{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }

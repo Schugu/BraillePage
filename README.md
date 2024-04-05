@@ -31,10 +31,10 @@ Sigue estos pasos para clonar y ejecutar el proyecto localmente:
 ### Utilidades 📦
 
 #### 📌 Teclado Braille a texto 
-<img src='media/Utilidad1.gif'>
+<img src='media/utilidad1.gif'>
 
 #### 📌 Codificador de texto a Braille
-<img src='media/Utilidad2.gif'>
+<img src='media/utilidad2.gif'>
 
 #### 📌 Codificador de número a Braille
 <img src='media/utilidad3.gif'>

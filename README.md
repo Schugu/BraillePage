@@ -1,5 +1,7 @@
 <h1 align='center'>🌟 Página para aprender Braille 📖🧑‍🦯♿️🌟</h1>
 
+> Practica de HTML, CSS y JavaScript. ✨
+
 🎯 Objetivo: Ofrecer una introducción accesible y comprensible al sistema de lectura táctil Braille, permitiendo que aquellos que pueden ver adquieran conocimientos sobre este valioso método de comunicación. A través de recursos educativos y prácticos, esta página brinda la oportunidad de explorar y comprender el Braille, fomentando así la inclusión de las personas ciegas.
 
 ------------

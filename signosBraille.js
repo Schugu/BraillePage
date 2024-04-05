@@ -74,4 +74,3 @@ const numeroBraille = {
     'º': [0, 0, 1, 1, 1, 1]
 }
 
-export {signosBraille, numeroBraille};

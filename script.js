@@ -1,6 +1,5 @@
 "use strict";
 
-import {signosBraille, numeroBraille} from 'http://127.0.0.1:5500/signosBraille.js'
 const arraySignosBraille = signosBraille; 
 const listaDeLetras = Object.keys(signosBraille); 
 const listaNumeroBraille = numeroBraille;
@@ -332,11 +331,9 @@ function AgregarNumeroConInput () {
 }
 
 // MAIN
-document.addEventListener("DOMContentLoaded", function() {
-    crearSignos();
-    ponerNumerosAUnSignoGenerador();
-    ponerBotonesFuncionales();
-    AgregarPalabraConInput();
-    AgregarNumeroConInput();
-})
+crearSignos();
+ponerNumerosAUnSignoGenerador();
+ponerBotonesFuncionales();
+AgregarPalabraConInput();
+AgregarNumeroConInput();
 

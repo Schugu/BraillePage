@@ -1,4 +1,4 @@
-import { letrasBraille } from "./signosBraille.js";
+import { letrasBraille } from "./signosBraille.ts";
 
 export default function Signo({ cadenaParaCodificar }) {
   const cadenaSeparada = cadenaParaCodificar.toLowerCase().split("");
@@ -23,7 +23,7 @@ export default function Signo({ cadenaParaCodificar }) {
 
 
   return (
-    <section className="flex flex-wrap">
+    <section className="flex flex-wrap gap-1">
       {elementosBraille}
     </section>
   );

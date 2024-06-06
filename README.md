@@ -1,30 +1,47 @@
-# React + TypeScript + Vite
+<h1 align='center'>🌟 Página para aprender Braille 📖🧑‍🦯♿️🌟</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Practica de HTML, CSS y JavaScript. ✨
 
-Currently, two official plugins are available:
+🎯 Objetivo: Ofrecer una introducción accesible y comprensible al sistema de lectura táctil Braille, permitiendo que aquellos que pueden ver adquieran conocimientos sobre este valioso método de comunicación. A través de recursos educativos y prácticos, esta página brinda la oportunidad de explorar y comprender el Braille, fomentando así la inclusión de las personas ciegas.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+------------
 
-## Expanding the ESLint configuration
+### Instalación 🛠️💻
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Sigue estos pasos para clonar y ejecutar el proyecto localmente:
 
-- Configure the top-level `parserOptions` property like this:
+1. Clona este repositorio en tu máquina local utilizando Git:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+    ```bash
+    git clone https://github.com/Schugu/BraillePage.git
+    ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. Navega al directorio del proyecto:
+
+    ```bash
+    cd BraillePage
+    ```
+
+3. Una vez clonado el repositorio en tu máquina local, abre el archivo `index.html` en tu navegador web para ver el proyecto.
+
+4. Si deseas personalizar los estilos de la página, puedes hacerlo modificando el archivo `styles.css`. Este archivo contiene todas las reglas de estilo que se aplican a la página. Abre el archivo `styles.css` en un editor de texto o IDE de tu elección, realiza los cambios que desees y guarda el archivo. Luego, recarga la página en tu navegador para ver los cambios aplicados.
+
+5. Si deseas modificar las utilidades y ver el sistema de codificación de caracteres a Braille, puedes revisar los archivos JavaScript en el repositorio.
+
+------------
+
+### Utilidades 📦
+
+#### 📌 Teclado Braille a texto 
+<img src='media/Utilidad1.gif'>
+
+#### 📌 Codificador de texto a Braille
+<img src='media/Utilidad2.gif'>
+
+#### 📌 Codificador de número a Braille
+<img src='media/utilidad3.gif'>
+
+------------
+
+### Capturas de pantalla 📸
+<img src='media/capturaDePantalla.png' alt='CapturaDePantalla1'>

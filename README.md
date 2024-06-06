@@ -33,15 +33,15 @@ Sigue estos pasos para clonar y ejecutar el proyecto localmente:
 ### Utilidades 📦
 
 #### 📌 Teclado Braille a texto 
-<img src='media/Utilidad1.gif'>
+<img src='public/media/Utilidad1.gif' alt='CapturaDePantalla1'>
 
 #### 📌 Codificador de texto a Braille
-<img src='media/Utilidad2.gif'>
+<img src='public/media/Utilidad2.gif' alt='CapturaDePantalla1'>
 
 #### 📌 Codificador de número a Braille
-<img src='media/utilidad3.gif'>
+<img src='public/media/utilidad3.gif' alt='CapturaDePantalla1'>
 
 ------------
 
 ### Capturas de pantalla 📸
-<img src='media/capturaDePantalla.png' alt='CapturaDePantalla1'>
+<img src='public/media/capturaDePantalla.png' alt='CapturaDePantalla1'>

@@ -11,7 +11,7 @@ export default function SignoBrailleConNumeros({ cadenaParaCodificar, formato }:
   const elementosBraille = cadenaSeparada.map(caracter => {
     if (caracter in letrasBraille) {
       return (
-        <article key={caracter} className={`grid grid-rows-3 grid-cols-2 place-items-center cursor-pointer
+        <article key={caracter} className={`grid grid-rows-3 grid-cols-2 place-items-center cursor-pointer rounded
         bg-transparent hover:bg-gray-200 hover:bg-opacity-50 border border-black shadow-braille transition-colors duration-150
           ${formato === 'grande' ? 'w-[100px] h-[147px]' : ''}
           ${formato === 'mediano' ? 'w-[75px] h-[110.25px]' : ''}

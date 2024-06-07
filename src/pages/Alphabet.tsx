@@ -38,6 +38,24 @@ export default function Alphabet() {
           </p>
         </div>
       </article>
+
+      <article className="flex flex-wrap justify-center gap-8">
+        <div className="max-w-lg flex flex-col gap-2 items-center">
+          <SignoBrailleConLetra cadenaParaCodificar="áéíóú" formato="mediano" />
+          <p className="text-center text-balanece">
+            Vocales con acento.
+          </p>
+        </div>
+
+        <div className="max-w-xl flex flex-col gap-2 items-center">
+          <SignoBrailleConLetra cadenaParaCodificar=" .,;:-" formato="mediano" />
+          <p className="text-center text-balanece">
+            Caracteres Especiales.
+          </p>
+        </div>
+      </article>
+
+
     </section>
   )
 }

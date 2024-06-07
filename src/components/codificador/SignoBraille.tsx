@@ -1,11 +1,11 @@
 import { letrasBraille } from "./signosBraille.ts";
 
-type SignoProps = {
+type SignoBrailleProps = {
   cadenaParaCodificar: string,
   formato: string;
 }
 
-export default function Signo({ cadenaParaCodificar, formato }: SignoProps) {
+export default function SignoBraille({ cadenaParaCodificar, formato }: SignoBrailleProps) {
   const cadenaSeparada = cadenaParaCodificar.toLowerCase().split("");
 
   const elementosBraille = cadenaSeparada.map(caracter => {

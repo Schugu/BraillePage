@@ -15,7 +15,7 @@ const config = {
         }
       },
       boxShadow: {
-        'braille': '1.95px 1.95px 2.6px rgba(0, 0, 0, 0.15)',
+        'braille': '1.95px 1.95px 1.6px rgba(0, 0, 0, 0.15)',
       },
     },
   },

@@ -1,12 +1,12 @@
 import brailleSignValue from "./brailleSignValue.ts";
-import BrailleSign from "../codificador/BrailleSign.tsx";
+import BrailleSign from "./BrailleSign.tsx";
 
-type WordToBrailleProps = {
+type CharsToBrailleProps = {
   cadenaParaCodificar: string,
   formato: string;
 }
 
-export default function WordToBraille({ cadenaParaCodificar, formato }: WordToBrailleProps) {
+export default function CharsToBraille({ cadenaParaCodificar, formato }: CharsToBrailleProps) {
   const cadenaSeparada = cadenaParaCodificar.toLowerCase().split("");
 
   const elementosBraille = cadenaSeparada.map((caracter, index) => {

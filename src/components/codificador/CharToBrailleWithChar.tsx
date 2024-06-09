@@ -6,7 +6,7 @@ type CharToBrailleWithCharProps = {
   formato: string;
 }
 
-export default function CharToBrailleWithChar({ cadenaParaCodificar, formato }: CharToBrailleWithChardProps) {
+export default function CharToBrailleWithChar({ cadenaParaCodificar, formato }: CharToBrailleWithCharProps) {
   const cadenaSeparada = cadenaParaCodificar.toLowerCase().split("");
 
   const elementosBraille = cadenaSeparada.map((caracter, index) => {

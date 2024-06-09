@@ -1,14 +1,10 @@
 type Estructura = Readonly<[number, number, number, number, number, number]>;
 
-type BrailleLetras = {
+type BrailleSignValue = {
     readonly [letra: string]: Estructura;
 };
 
-type BrailleNumeros = {
-    readonly [numero: string]: Estructura;
-};
-
-export const letrasBraille: BrailleLetras = {
+const brailleSignValue: BrailleSignValue = {
     // PRIMERA SERIE
     //    1  4  2  5  3  6
     'a': [1, 0, 0, 0, 0, 0],
@@ -67,9 +63,8 @@ export const letrasBraille: BrailleLetras = {
 
     '¥': [1, 1, 1, 1, 1, 1], /* Signo Generador */
     'º': [0, 1, 0, 1, 1, 1], /* Signo de número */
-};
 
-export const numerosBraille: BrailleNumeros = {
+    // Números
     //    1  4  2  5  3  6
     '1': [1, 0, 0, 0, 0, 0],
     '2': [1, 0, 1, 0, 0, 0],
@@ -81,9 +76,6 @@ export const numerosBraille: BrailleNumeros = {
     '8': [1, 0, 1, 1, 0, 0],
     '9': [0, 1, 1, 0, 0, 0],
     '0': [0, 1, 1, 1, 0, 0],
-
-    ' ': [0, 0, 0, 0, 0, 0],
-    '.': [0, 1, 0, 0, 0, 0],
-    ',': [0, 0, 0, 1, 0, 0],
-    'º': [0, 1, 0, 1, 1, 1]
 };
+
+export default brailleSignValue;

@@ -4,6 +4,7 @@ import Footer from "./components/footer/Footer.tsx";
 import Home from "./pages/Home.tsx";
 import Alphabet from "./pages/Alphabet.tsx";
 import Numbers from "./pages/Numbers.tsx";
+import Keyboard from "./pages/keyboard/Keyboard.tsx";
 
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
             <Route path="/home" element={<Navigate to="/" />} />
             <Route path='/alphabet' element={<Alphabet />} />
             <Route path='/numbers' element={<Numbers />} />
+            <Route path='/keyboard' element={<Keyboard />} />
 
           </Routes>
         </section>

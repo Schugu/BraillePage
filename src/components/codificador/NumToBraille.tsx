@@ -1,12 +1,12 @@
 import brailleSignValue from "./brailleSignValue.ts";
-import BrailleSign from "../codificador/BrailleSign.tsx";
+import BrailleSign from "./BrailleSign.tsx";
 
-type SignoBrailleProps = {
+type NumToBrailleProps = {
   numerosParaCodificar: string,
-  formato: string;
+  formato: 'chico' | 'mediano' | 'grande';
 }
 
-export default function SignoBraille({ numerosParaCodificar, formato }: SignoBrailleProps) {
+export default function NumToBraille({ numerosParaCodificar, formato }: NumToBrailleProps) {
   const numeros = numerosParaCodificar.match(/\d+|\s+/g);
 
   if (numeros === null) {

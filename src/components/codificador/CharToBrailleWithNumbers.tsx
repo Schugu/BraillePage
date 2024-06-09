@@ -2,7 +2,7 @@ import brailleSignValue from "./brailleSignValue.ts";
 
 type CharToBrailleWithNumbersProps = {
   cadenaParaCodificar: string,
-  formato: string;
+  formato: 'chico' | 'mediano' | 'grande';
 }
 
 export default function CharToBrailleWithNumbers({ cadenaParaCodificar, formato }:CharToBrailleWithNumbersProps) {

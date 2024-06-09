@@ -3,7 +3,7 @@ import BrailleSign from "./BrailleSign.tsx";
 
 type CharToBrailleWithCharProps = {
   cadenaParaCodificar: string,
-  formato: string;
+  formato: 'chico' | 'mediano' | 'grande';
 }
 
 export default function CharToBrailleWithChar({ cadenaParaCodificar, formato }: CharToBrailleWithCharProps) {
@@ -25,7 +25,6 @@ export default function CharToBrailleWithChar({ cadenaParaCodificar, formato }: 
               {caracter.toUpperCase()}
             </p>
           </article>
-
         </section>
       );
     } else {

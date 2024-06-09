@@ -2,7 +2,7 @@ import brailleSignValue from "./brailleSignValue.ts";
 
 type BrailleSignProps = {
   caracter: string;
-  formato: string;
+  formato: 'chico' | 'mediano' | 'grande';
   key: string;
 }
 

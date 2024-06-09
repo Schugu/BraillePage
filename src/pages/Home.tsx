@@ -4,7 +4,7 @@ import CharToBrailleWithNumbers from "../components/codificador/CharToBrailleWit
 export default function Home() {
   return (
     <section className="w-full h-full flex flex-col items-center gap-8 p-2">
-      <h1 className="w-full border-b-4 border-orange-600 text-5xl text-center">El sistema Braille</h1>
+      <h1 className="w-full border-b-4 border-blue-950 text-5xl text-center">El sistema Braille</h1>
 
       <article className="flex flex-col gap-1 text-2xl">
         <div className="w-full flex flex-wrap items-center justify-center gap-2">

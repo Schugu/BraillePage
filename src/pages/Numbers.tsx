@@ -6,7 +6,7 @@ import ANWWAN from "../components/codificador/AllNumbersWithWordsAndNumbers.tsx"
 export default function Numbers() {
   return (
     <section className="w-full h-full flex flex-col items-center gap-8 p-2 text-2xl">
-      <h1 className="w-full border-b-4 border-orange-600 text-5xl text-center">Los números</h1>
+      <h1 className="w-full border-b-4 border-blue-950 text-5xl text-center">Los números</h1>
 
       <article className="flex flex-wrap gap-2 items-center">
         <CharsToBraille cadenaParaCodificar="º" formato="mediano" />

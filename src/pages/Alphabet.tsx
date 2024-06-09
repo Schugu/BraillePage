@@ -3,7 +3,7 @@ import CharToBrailleWithChar from "../components/codificador/CharToBrailleWithCh
 export default function Alphabet() {
   return (
     <section className="flex flex-col items-center gap-8 p-2 text-2xl">
-      <h1 className="w-full border-b-4 border-orange-600 text-5xl text-center">El alfabeto</h1>
+      <h1 className="w-full border-b-4 border-blue-950 text-5xl text-center">El alfabeto</h1>
 
       <article className="flex flex-col gap-2 items-center">
         <CharToBrailleWithChar cadenaParaCodificar="abcdefghij" formato="mediano" />

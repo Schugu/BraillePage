@@ -1,15 +1,15 @@
-import { letrasBraille } from "./signosBraille.ts";
+import brailleSignValue from "./brailleSignValue.ts";
 
-type SignoBrailleProps = {
+type CharToBrailleWithNumbersProps = {
   cadenaParaCodificar: string,
   formato: string;
 }
 
-export default function SignoBraille({ cadenaParaCodificar, formato }: SignoBrailleProps) {
+export default function CharToBrailleWithNumbers({ cadenaParaCodificar, formato }:CharToBrailleWithNumbersProps) {
   const cadenaSeparada = cadenaParaCodificar.toLowerCase().split("");
 
   const elementosBraille = cadenaSeparada.map(caracter => {
-    if (caracter in letrasBraille) {
+    if (caracter in brailleSignValue) {
       return (
         <article key={caracter} className={`grid grid-rows-3 grid-cols-2 place-items-center cursor-pointer rounded
         bg-transparent hover:bg-gray-200 hover:bg-opacity-50 border border-black shadow-braille transition-colors duration-150
@@ -18,13 +18,14 @@ export default function SignoBraille({ cadenaParaCodificar, formato }: SignoBrai
           ${formato === 'chico' ? 'w-[50px] h-[73.5px]' : ''}
         `}>
           {
-            letrasBraille[caracter].map((punto, puntoIndex) => (
+            brailleSignValue[caracter].map((punto, puntoIndex) => (
               <span key={puntoIndex}
                 className={`${punto === 1 ? '' : 'bg-opacity-10'} bg-black rounded-full cursor-pointer shadow-braille
-                  ${formato === 'grande' ? 'w-[30px] h-[30px]' : ''}
-                  ${formato === 'mediano' ? 'w-[22.5px] h-[22.5px]' : ''}
-                  ${formato === 'chico' ? 'w-[15px] h-[15px]' : ''}
-              `}></span>
+                  ${formato === 'grande' ? 'w-[30px] h-[30px] text-2xl' : ''}
+                  ${formato === 'mediano' ? 'w-[22.5px] h-[22.5px] text-lg' : ''}
+                  ${formato === 'chico' ? 'w-[15px] h-[15px] text-[8px]' : ''}
+                  text-white flex justify-center items-center 
+              `}>{puntoIndex+1}</span>
             ))
           }
         </article>

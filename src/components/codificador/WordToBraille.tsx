@@ -12,7 +12,7 @@ export default function WordToBraille({ cadenaParaCodificar, formato }: WordToBr
   const elementosBraille = cadenaSeparada.map((caracter, index) => {
     if (caracter in brailleSignValue) {
       return (
-        <BrailleSign caracter={caracter} formato={formato} index={index}/>
+        <BrailleSign caracter={caracter} formato={formato} key={`${caracter}-${index}`}/>
       );
     } else {
       return null;

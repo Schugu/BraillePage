@@ -13,7 +13,7 @@ export default function CharToBrailleWithChar({ cadenaParaCodificar, formato }: 
     if (caracter in brailleSignValue) {
       return (
         <section className="flex flex-col gap-1">
-          <BrailleSign caracter={caracter} formato={formato} index={index}/>
+          <BrailleSign caracter={caracter} formato={formato} key={`${caracter}-${index}`}/>
 
           <article key={caracter} className={`flex justify-center items-center cursor-pointer rounded
         bg-transparent hover:bg-gray-200 hover:bg-opacity-50 border border-black shadow-braille transition-colors duration-150

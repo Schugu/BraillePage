@@ -28,7 +28,7 @@ export default function SignoBraille({ numerosParaCodificar, formato }: SignoBra
 
         return numeroConSimbolo.map((num, index) => {
           return (
-            <BrailleSign caracter={num} formato={formato} index={index} />
+            <BrailleSign caracter={num} formato={formato} key={`${num}-${index}`} />
           );
         });
       }
@@ -38,7 +38,7 @@ export default function SignoBraille({ numerosParaCodificar, formato }: SignoBra
       return charSeparados.map((char, index) => {
         if (char in brailleSignValue) {
           return (
-            <BrailleSign caracter={char} formato={formato} index={index} key={index} /> // Asegúrate de agregar una key única para cada componente
+            <BrailleSign caracter={char} formato={formato} key={`${char}-${index}`} />
           );
         }
         return null; 

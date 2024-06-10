@@ -1,4 +1,4 @@
-import brailleSignValue from "../../components/codificador/brailleSignValue.ts";
+import brailleSignValue from "../../components/codificador/brailleSignValue";
 
 type BrailleSignProps = {
   caracter: string;

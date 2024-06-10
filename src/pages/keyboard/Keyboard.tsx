@@ -1,11 +1,14 @@
 import { useState } from 'react';
 import CharsToBraille from "./CharsToBraille";
+import NumToBraille from "./NumToBraille.tsx";
 
 export default function Keyboard() {
   const [selectedChars, setSelectedChars] = useState<string[]>([]);
 
   const handleClick = (caracter: string) => {
-    setSelectedChars(prevSelectedChars => [...prevSelectedChars, caracter]);
+    if (caracter !== 'º') {
+      setSelectedChars(prevSelectedChars => [...prevSelectedChars, caracter]);
+    }
   };
 
   const handleRemoveLast = () => {
@@ -37,8 +40,9 @@ export default function Keyboard() {
       <article className='flex flex-col gap-2 items-center'>
         <CharsToBraille cadenaParaCodificar="qwertyuiop" formato="chico" handleClick={handleClick} />
         <CharsToBraille cadenaParaCodificar="asdfghjkl" formato="chico" handleClick={handleClick} />
-        <CharsToBraille cadenaParaCodificar="zxcvbnm,;.:-" formato="chico" handleClick={handleClick} />
-
+        <CharsToBraille cadenaParaCodificar="zxcvbnm,;.:- " formato="chico" handleClick={handleClick} />
+        <NumToBraille numerosParaCodificar='1 2 3 4 5' formato='chico' handleClick={handleClick} />
+        <NumToBraille numerosParaCodificar='6 7 8 9 0' formato='chico' handleClick={handleClick} />
 
       </article>
 

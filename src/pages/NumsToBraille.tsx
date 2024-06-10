@@ -1,18 +1,19 @@
 import { useState } from "react";
 import NumToBraille from "../components/codificador/NumToBraille.tsx";
+import useWindowResolution from "../hooks/useWindowResolution.tsx";
+import Titulo from "../components/Titulo.tsx";
 
 export default function NumsToBraille() {
   const [numero, setNumero] = useState('');
+  const resolution = useWindowResolution();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setNumero(event.target.value);
   };
 
   return (
-    <section className="flex flex-col items-center gap-8 p-2 text-2xl">
-      <h1 className="w-full border-b-4 border-blue-950 text-3xl md:text-5xl text-center">
-        Codificador de números
-      </h1>
+    <section className="flex flex-col items-center gap-8 px-2 py-4 text-lg md:text-2xl">
+      <Titulo titulo="Codificador de números"/>
 
       <article className="flex flex-col items-center gap-2">
         <p className="text-center">Escriba un número</p>
@@ -24,6 +25,7 @@ export default function NumsToBraille() {
             type="number"
             placeholder="123"
             autoComplete="off"
+            min="0"
           />
           <button
             onClick={() => { setNumero('') }}
@@ -33,7 +35,7 @@ export default function NumsToBraille() {
       </article>
 
       <article className="w-full flex justify-center">
-        <NumToBraille numerosParaCodificar={numero} formato="chico" />
+        <NumToBraille numerosParaCodificar={numero} formato={resolution} />
       </article>
     </section>
   );

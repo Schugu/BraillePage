@@ -1,18 +1,19 @@
 import { useState } from "react";
 import CharsToBraille from "../components/codificador/CharsToBraille";
+import useWindowResolution from "../hooks/useWindowResolution.tsx";
+import Titulo from "../components/Titulo.tsx";
 
 export default function WordsToBraille() {
   const [palabra, setPalabra] = useState('');
+  const resolution = useWindowResolution();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setPalabra(event.target.value);
   };
 
   return (
-    <section className="flex flex-col items-center gap-8 p-2 text-2xl">
-      <h1 className="w-full border-b-4 border-blue-950 text-3xl md:text-5xl text-center">
-        Codificador de palabras
-      </h1>
+    <section className="flex flex-col items-center gap-8 px-2 py-4 text-lg md:text-2xl">
+      <Titulo titulo="Codificador de palabras"/>
 
       <article className="flex flex-col items-center gap-2">
         <p className="text-center">Escriba una palabra</p>
@@ -33,7 +34,7 @@ export default function WordsToBraille() {
       </article>
 
       <article className="w-full flex justify-center">
-        <CharsToBraille cadenaParaCodificar={palabra} formato="chico" />
+        <CharsToBraille cadenaParaCodificar={palabra} formato={resolution} />
       </article>
     </section>
   );

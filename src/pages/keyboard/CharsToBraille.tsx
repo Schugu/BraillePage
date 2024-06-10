@@ -26,7 +26,7 @@ export default function CharsToBraille({ cadenaParaCodificar, formato, handleCli
   });
 
   return (
-    <section className="flex flex-wrap gap-1">
+    <section className="flex flex-wrap gap-1 justify-center">
       {elementosBraille}
     </section>
   );

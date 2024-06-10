@@ -27,8 +27,8 @@ export default function Keyboard() {
       </article>
 
       <article className='w-full flex flex-col gap-4 justify-center items-center'>
-        <p className='w-4/6 min-h-20 p-2 border-2 border-blue-950 bg-blue-100 text-blue-900 rounded-md'>{selectedChars}</p>
-        <div className='flex flex-wrap gap-6'>
+        <p className='w-full md:w-4/6 min-h-20 p-2 border-2 border-blue-950 bg-blue-100 text-blue-900 rounded-md'>{selectedChars}</p>
+        <div className='flex flex-wrap gap-6 justify-center'>
           <button onClick={handleRemoveLast}
             className='bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded'>Borrar</button>
           <button onClick={handleClearAll}
@@ -38,14 +38,9 @@ export default function Keyboard() {
       </article>
 
       <article className='flex flex-col gap-2 items-center'>
-        <CharsToBraille cadenaParaCodificar="qwertyuiop" formato="chico" handleClick={handleClick} />
-        <CharsToBraille cadenaParaCodificar="asdfghjkl" formato="chico" handleClick={handleClick} />
-        <CharsToBraille cadenaParaCodificar="zxcvbnm,;.:- " formato="chico" handleClick={handleClick} />
-        <NumToBraille numerosParaCodificar='1 2 3 4 5' formato='chico' handleClick={handleClick} />
-        <NumToBraille numerosParaCodificar='6 7 8 9 0' formato='chico' handleClick={handleClick} />
-
+        <CharsToBraille cadenaParaCodificar="qwertyuiopasdfghjklzxcvbnm,;.:- " formato="chico" handleClick={handleClick} />
+        <NumToBraille numerosParaCodificar='1 2 3 4 5 6 7 8 9 0' formato='chico' handleClick={handleClick} />
       </article>
-
     </section>
   );
 }

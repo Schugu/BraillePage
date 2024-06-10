@@ -57,7 +57,7 @@ export default function NumToBraille({ numerosParaCodificar, formato, handleClic
   });
 
   return (
-    <section className="flex flex-wrap gap-1">
+    <section className="flex flex-wrap gap-1 justify-center">
       {elementosBraille.flat()}
     </section>
   );

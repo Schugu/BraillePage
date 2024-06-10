@@ -2,10 +2,10 @@ import { useState } from "react";
 import NumToBraille from "../components/codificador/NumToBraille.tsx";
 
 export default function NumsToBraille() {
-  const [palabra, setPalabra] = useState('');
+  const [numero, setNumero] = useState('');
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setPalabra(event.target.value);
+    setNumero(event.target.value);
   };
 
   return (
@@ -19,21 +19,21 @@ export default function NumsToBraille() {
         <div className="flex flex-wrap gap-2">
           <input
             onChange={handleChange}
-            value={palabra}
+            value={numero}
             className="rounded border-2 border-blue-400 p-2 outline-none"
-            type="text"
-            placeholder="Hola"
+            type="number"
+            placeholder="123"
             autoComplete="off"
           />
           <button
-            onClick={() => { setPalabra('') }}
+            onClick={() => { setNumero('') }}
             className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
           >Borrar todo</button>
         </div>
       </article>
 
       <article className="w-full flex justify-center">
-        <NumToBraille numerosParaCodificar={palabra} formato="chico" />
+        <NumToBraille numerosParaCodificar={numero} formato="chico" />
       </article>
     </section>
   );

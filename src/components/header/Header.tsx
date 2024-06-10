@@ -2,7 +2,7 @@ import LinkSection from "./LinkSection.tsx";
 
 export default function Navbar() {
   return (
-    <section className="flex flex-wrap items-center gap-2 justify-between p-2 
+    <section className="flex flex-wrap items-center gap-2 justify-center md:justify-between p-2 
     bg-blue-950 text-white text-xl">
       <LinkSection LinkTo="/" Icon="w-9 h-9 icon-[cil--braille]" Label="BraillePage" />
 

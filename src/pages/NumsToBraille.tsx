@@ -10,17 +10,17 @@ export default function NumsToBraille() {
 
   return (
     <section className="flex flex-col items-center gap-8 p-2 text-2xl">
-      <h1 className="w-full border-b-4 border-blue-950 text-5xl text-center">
+      <h1 className="w-full border-b-4 border-blue-950 text-3xl md:text-5xl text-center">
         Codificador de números
       </h1>
 
       <article className="flex flex-col items-center gap-2">
-        <p>Escriba un número</p>
-        <div className="flex flex-wrap gap-2">
+        <p className="text-center">Escriba un número</p>
+        <div className="flex flex-wrap gap-2 justify-center">
           <input
             onChange={handleChange}
             value={numero}
-            className="rounded border-2 border-blue-400 p-2 outline-none"
+            className="w-full rounded border-2 border-blue-400 p-2 outline-none"
             type="number"
             placeholder="123"
             autoComplete="off"

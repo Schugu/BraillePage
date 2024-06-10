@@ -14,38 +14,38 @@ export default function NumToBraille({ numerosParaCodificar, formato }: NumToBra
   }
 
   const elementosBraille = numeros.map(numSinFormato => {
-    const numero = parseFloat(numSinFormato).toLocaleString('es-ES').toString();
 
-    if (numero.length < 2) {
-      if (numero in brailleSignValue) {
+    if (numSinFormato.length < 2) {
+      if (numSinFormato in brailleSignValue) {
         let numeroConSimbolo = [];
-
-        if (numero === ' ') {
-          numeroConSimbolo = [numero];
+    
+        if (numSinFormato === ' ') {
+          numeroConSimbolo = [numSinFormato];
         } else {
-          numeroConSimbolo = ['º', numero];
+          numeroConSimbolo = ['º', numSinFormato];
         }
 
         return numeroConSimbolo.map((num, index) => {
           return (
-            <BrailleSign caracter={num} formato={formato} key={`${num}-${index}`} />
+            <BrailleSign caracter={num} formato={formato} key={`${num}-${index}`}/>
           );
         });
       }
     } else {
+      const numero = parseFloat(numSinFormato).toLocaleString('es-ES').toString();
+
       const charSeparados = ['º', ...numero.split('')];
 
       return charSeparados.map((char, index) => {
         if (char in brailleSignValue) {
           return (
-            <BrailleSign caracter={char} formato={formato} key={`${char}-${index}`} />
+            <BrailleSign caracter={char} formato={formato} key={`${char}-${index}`}/>
           );
         }
         return null; 
       });
     }
   })
-
   return (
     <section className="flex flex-wrap gap-1">
       {elementosBraille.flat()}

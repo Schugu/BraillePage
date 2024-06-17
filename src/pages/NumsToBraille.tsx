@@ -23,7 +23,7 @@ export default function NumsToBraille() {
             role="form"
             onChange={handleChange}
             value={numero}
-            className="w-full rounded border-2 border-blue-400 p-2 outline-none"
+            className="w-full rounded border-2 border-blue-400 p-2 outline-none bg-blue-50"
             type="number"
             placeholder="Ejemplo 123"
             autoComplete="off"

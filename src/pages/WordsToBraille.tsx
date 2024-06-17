@@ -23,7 +23,7 @@ export default function WordsToBraille() {
             tabIndex={9}
             onChange={handleChange}
             value={palabra}
-            className="w-full rounded border-2 border-blue-400 p-2 outline-none"
+            className="w-full rounded border-2 border-blue-400 p-2 outline-none bg-blue-50"
             type="text"
             placeholder="Ejemplo Hola"
             autoComplete="off"

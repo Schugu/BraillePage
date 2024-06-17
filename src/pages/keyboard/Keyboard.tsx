@@ -41,7 +41,7 @@ export default function Keyboard() {
       </article>
 
       <article className='flex flex-col gap-2 items-center'>
-        <CharsToBraille cadenaParaCodificar="qwertyuiopasdfghjklzxcvbnm,;.:- " formato={resolution} handleClick={handleClick} />
+        <CharsToBraille cadenaParaCodificar="abcdefghijklmnñopqrstuvwxyz,;.:- " formato={resolution} handleClick={handleClick} />
         <NumToBraille numerosParaCodificar='1 2 3 4 5 6 7 8 9 0' formato={resolution} handleClick={handleClick} />
       </article>
     </section>

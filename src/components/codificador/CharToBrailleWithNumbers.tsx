@@ -1,4 +1,5 @@
 import brailleSignValue from "./brailleSignValue.ts";
+import { Tooltip } from "react-tooltip";
 
 type CharToBrailleWithNumbersProps = {
   cadenaParaCodificar: string,
@@ -6,15 +7,19 @@ type CharToBrailleWithNumbersProps = {
   indexProp: number;
 }
 
-export default function CharToBrailleWithNumbers({ cadenaParaCodificar, formato, indexProp }:CharToBrailleWithNumbersProps) {
+export default function CharToBrailleWithNumbers({ cadenaParaCodificar, formato, indexProp }: CharToBrailleWithNumbersProps) {
   const cadenaSeparada = cadenaParaCodificar.toLowerCase().split("");
 
   const elementosBraille = cadenaSeparada.map(caracter => {
     if (caracter in brailleSignValue) {
       return (
-        <div tabIndex={indexProp} aria-label="Signo generador con números"
-        key={caracter} 
-        className={`grid grid-rows-3 grid-cols-2 place-items-center cursor-pointer rounded
+        <div
+          data-tooltip-delay-show={700}
+          data-tooltip-id="my-tooltip"
+          data-tooltip-content="Signo Generador"
+          tabIndex={indexProp} aria-label="Signo generador con números"
+          key={caracter}
+          className={`grid grid-rows-3 grid-cols-2 place-items-center cursor-pointer rounded
         bg-transparent hover:bg-gray-200 hover:bg-opacity-50 border border-black shadow-braille transition-colors duration-150
           ${formato === 'grande' ? 'w-[100px] h-[147px]' : ''}
           ${formato === 'mediano' ? 'w-[75px] h-[110.25px]' : ''}
@@ -28,9 +33,14 @@ export default function CharToBrailleWithNumbers({ cadenaParaCodificar, formato,
                   ${formato === 'mediano' ? 'w-[22.5px] h-[22.5px] text-lg' : ''}
                   ${formato === 'chico' ? 'w-[15px] h-[15px] text-[8px]' : ''}
                   text-white flex justify-center items-center 
-              `}>{puntoIndex+1}</span>
+              `}>{puntoIndex + 1}</span>
             ))
           }
+          <Tooltip
+            id="my-tooltip"
+            border="2px solid #60a5ef"
+            style={{ fontSize: '15px', padding: '0px 10px' }}
+          />
         </div>
       );
     } else {

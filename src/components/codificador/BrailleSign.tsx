@@ -1,4 +1,5 @@
 import brailleSignValue from "./brailleSignValue.ts";
+import { Tooltip } from "react-tooltip";
 
 type BrailleSignProps = {
   caracter: string;
@@ -9,8 +10,17 @@ type BrailleSignProps = {
 }
 
 export default function BrailleSign({ caracter, formato, tabIndex, leerOrdinal }: BrailleSignProps) {
+  const caracterFormatead: string =
+    caracter === '¥' ? 'Signo generador'
+      : caracter === 'º' ? 'Signo numérico'
+        : caracter === ' ' ? 'Espacio'
+          : caracter.toUpperCase();
   return (
     <div
+      data-tooltip-delay-show={700}
+      data-tooltip-id="my-tooltip"
+      data-tooltip-content={caracterFormatead}
+
       tabIndex={caracter !== "º" ? tabIndex
         : leerOrdinal === true ? tabIndex : undefined}
       role="button"
@@ -42,6 +52,12 @@ export default function BrailleSign({ caracter, formato, tabIndex, leerOrdinal }
             `}></span>
         ))
       }
+
+      <Tooltip
+        id="my-tooltip"
+        border="2px solid #60a5ef"
+        style={{ fontSize: '15px', padding: '0px 10px' }}
+      />
     </div>
   )
 }

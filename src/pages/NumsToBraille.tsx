@@ -13,7 +13,7 @@ export default function NumsToBraille() {
 
   return (
     <section className="flex flex-col items-center gap-8 px-2 py-4 text-lg md:text-2xl">
-      <Titulo titulo="Codificador de números"/>
+      <Titulo titulo="Codificador de números" />
 
       <article className="flex flex-col items-center gap-2">
         <p tabIndex={8} className="text-center">Escriba un número</p>
@@ -29,17 +29,25 @@ export default function NumsToBraille() {
             autoComplete="off"
             min="0"
           />
-          <button
-            tabIndex={10}
-            role="button"
-            onClick={() => { setNumero('') }}
-            className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
-          >Borrar todo</button>
+          <div className="w-full flex gap-2 justify-center">
+            <button
+              tabIndex={10}
+              role="button"
+              onClick={() => { setNumero('') }}
+              className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
+            >Borrar todo</button>
+            <button
+              role="button"
+              tabIndex={10}
+              onClick={() => { setNumero(prevNumero => prevNumero.slice(0, -1)) }}
+              className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
+            >Borrar</button>
+          </div>
         </div>
       </article>
 
       <article className="w-full flex justify-center">
-        <NumToBraille numerosParaCodificar={numero} formato={resolution} indexProp={11} leerOrdinal={true}/>
+        <NumToBraille numerosParaCodificar={numero} formato={resolution} indexProp={11} leerOrdinal={true} />
       </article>
     </section>
   );

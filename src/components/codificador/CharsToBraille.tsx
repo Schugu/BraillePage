@@ -4,15 +4,23 @@ import BrailleSign from "./BrailleSign.tsx";
 type CharsToBrailleProps = {
   cadenaParaCodificar: string,
   formato: 'chico' | 'mediano' | 'grande';
+  indexProp: number;
+  leerOrdinal?: boolean;
 }
 
-export default function CharsToBraille({ cadenaParaCodificar, formato }: CharsToBrailleProps) {
+export default function CharsToBraille({ cadenaParaCodificar, formato, indexProp, leerOrdinal }: CharsToBrailleProps) {
   const cadenaSeparada = cadenaParaCodificar.toLowerCase().split("");
 
   const elementosBraille = cadenaSeparada.map((caracter, index) => {
     if (caracter in brailleSignValue) {
       return (
-        <BrailleSign caracter={caracter} formato={formato} key={`${caracter}-${index}`}/>
+        <BrailleSign
+          leerOrdinal={leerOrdinal}
+          caracter={caracter}
+          formato={formato}
+          key={`${caracter}-${index}`}
+          tabIndex={indexProp + index}
+        />
       );
     } else {
       return null;

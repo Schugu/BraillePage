@@ -16,17 +16,21 @@ export default function WordsToBraille() {
       <Titulo titulo="Codificador de palabras"/>
 
       <article className="flex flex-col items-center gap-2">
-        <p className="text-center">Escriba una palabra</p>
+        <p tabIndex={8} className="text-center">Escriba una palabra</p>
         <div className="flex flex-wrap gap-2 justify-center">
           <input
+            role="form"
+            tabIndex={9}
             onChange={handleChange}
             value={palabra}
             className="w-full rounded border-2 border-blue-400 p-2 outline-none"
             type="text"
-            placeholder="Hola"
+            placeholder="Ejemplo Hola"
             autoComplete="off"
           />
           <button
+            role="button"
+            tabIndex={10}
             onClick={() => { setPalabra('') }}
             className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
           >Borrar todo</button>
@@ -34,7 +38,7 @@ export default function WordsToBraille() {
       </article>
 
       <article className="w-full flex justify-center">
-        <CharsToBraille cadenaParaCodificar={palabra} formato={resolution} />
+        <CharsToBraille cadenaParaCodificar={palabra} formato={resolution} indexProp={11}/>
       </article>
     </section>
   );

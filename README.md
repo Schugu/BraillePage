@@ -1,32 +1,51 @@
 <h1 align='center'>🌟 Página para aprender Braille 📖🧑‍🦯♿️🌟</h1>
 
-> Practica de HTML, CSS y JavaScript. ✨
+> Practica de React, Tailwind y TypeScript. ✨
 
 🎯 Objetivo: Ofrecer una introducción accesible y comprensible al sistema de lectura táctil Braille, permitiendo que aquellos que pueden ver adquieran conocimientos sobre este valioso método de comunicación. A través de recursos educativos y prácticos, esta página brinda la oportunidad de explorar y comprender el Braille, fomentando así la inclusión de las personas ciegas.
 
 ------------
 
-### Instalación 🛠️💻
+### Instalación y ejecución del proyecto (React) 🛠️💻
 
-Sigue estos pasos para clonar y ejecutar el proyecto localmente:
+1. Abre la consola en la ubicación deseada para clonar el repositorio.
 
-1. Clona este repositorio en tu máquina local utilizando Git:
+2. Clona este repositorio en tu máquina local utilizando Git:
 
     ```bash
     git clone https://github.com/Schugu/BraillePage.git
     ```
 
-2. Navega al directorio del proyecto:
+3. Navega al directorio del proyecto clonado:
 
     ```bash
     cd BraillePage
     ```
 
-3. Una vez clonado el repositorio en tu máquina local, abre el archivo `index.html` en tu navegador web para ver el proyecto.
+4. Instala las dependencias del front end utilizando npm o yarn:
 
-4. Si deseas personalizar los estilos de la página, puedes hacerlo modificando el archivo `styles.css`. Este archivo contiene todas las reglas de estilo que se aplican a la página. Abre el archivo `styles.css` en un editor de texto o IDE de tu elección, realiza los cambios que desees y guarda el archivo. Luego, recarga la página en tu navegador para ver los cambios aplicados.
+    ```bash
+    npm install
+    # o
+    yarn
+    ```
 
-5. Si deseas modificar las utilidades y ver el sistema de codificación de caracteres a Braille, puedes revisar los archivos JavaScript en el repositorio.
+5. Inicia el servidor de desarrollo del proyecto utilizando npm:
+
+    ```bash
+    npm run dev
+    ```
+
+6. Una vez que el servidor de desarrollo del proyecto esté en funcionamiento, abre tu navegador web y navega a la dirección local para ver el proyecto en acción.
+
+### Personalización y comprensión del proyecto 🎨🧠
+
+Para personalizar y comprender el proyecto, sigue estas instrucciones:
+
+- Si deseas modificar o entender cómo funciona el proyecto, revisa los archivos y carpetas dentro de `src`. 
+    - La lógica y la apariencia de las páginas se encuentran en la carpeta `pages`.
+    - Los componentes individuales se encuentran en la carpeta `components`.
+    - El sistema de rutas se encuentra en el archivo `App.tsx`.
 
 ------------
 

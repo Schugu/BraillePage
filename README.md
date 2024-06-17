@@ -52,15 +52,51 @@ Para personalizar y comprender el proyecto, sigue estas instrucciones:
 ### Utilidades 📦
 
 #### 📌 Teclado Braille a texto 
-<img src='public/media/Utilidad1.gif' alt='CapturaDePantalla1'>
+<img src='public/screenshots/desktop/4.png' alt='CapturaDePantalla4'>
 
 #### 📌 Codificador de texto a Braille
-<img src='public/media/Utilidad2.gif' alt='CapturaDePantalla1'>
+<img src='public/screenshots/desktop/5.png' alt='CapturaDePantalla5'>
 
 #### 📌 Codificador de número a Braille
-<img src='public/media/utilidad3.gif' alt='CapturaDePantalla1'>
+<img src='public/screenshots/desktop/6.png' alt='CapturaDePantalla6'>
 
 ------------
 
-### Capturas de pantalla 📸
-<img src='public/media/capturaDePantalla.png' alt='CapturaDePantalla1'>
+## Capturas de pantalla 📸
+### 📱 Celular 📱
+<table width="100%">
+  <tr>
+    <td width="50%">
+      <img src='public/screenshots/cellphone/1.png' alt='CapturaDePantalla1'>
+    </td>
+    <td width="50%">
+        <img src='public/screenshots/cellphone/2.png' alt='CapturaDePantalla2'>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <img src='public/screenshots/cellphone/3.png' alt='CapturaDePantalla3'>
+    </td>
+    <td width="50%">
+        <img src='public/screenshots/cellphone/4.png' alt='CapturaDePantalla4'>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <img src='public/screenshots/cellphone/5.png' alt='CapturaDePantalla5'>
+    </td>
+    <td width="50%">
+        <img src='public/screenshots/cellphone/6.png' alt='CapturaDePantalla6'>
+    </td>
+  </tr>
+ 
+</table>
+
+### 💻 Computadora 💻
+<img src='public/screenshots/desktop/1.png' alt='CapturaDePantalla1'>
+<img src='public/screenshots/desktop/2.png' alt='CapturaDePantalla2'>
+<img src='public/screenshots/desktop/3.png' alt='CapturaDePantalla3'>
+<img src='public/screenshots/desktop/4.png' alt='CapturaDePantalla4'>
+<img src='public/screenshots/desktop/5.png' alt='CapturaDePantalla5'>
+<img src='public/screenshots/desktop/6.png' alt='CapturaDePantalla6'>
+

@@ -3,11 +3,12 @@ import BrailleSign from "./BrailleSign.tsx";
 
 type AllNumbersWithWordsAndNumbersProps = {
   formato: 'chico' | 'mediano' | 'grande';
+  tabIndex: number;
 }
 
-export default function AllNumbersWithWordsAndNumbers({ formato }: AllNumbersWithWordsAndNumbersProps) {
-  const cadenaParaCodificar = "abcdefghij";
-  const numeros = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0',];
+export default function AllNumbersWithWordsAndNumbers({ formato, tabIndex }: AllNumbersWithWordsAndNumbersProps) {
+  const cadenaParaCodificar = "1234567890";
+  const numeros = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',];
 
 
   const cadenaSeparada = cadenaParaCodificar.toLowerCase().split("");
@@ -27,7 +28,12 @@ export default function AllNumbersWithWordsAndNumbers({ formato }: AllNumbersWit
             </p>
           </article>
 
-          <BrailleSign caracter={caracter} formato={formato} key={`BrailleSign-${caracter}-${index}`} />
+          <BrailleSign
+            tabIndex={tabIndex + index}
+            caracter={caracter}
+            formato={formato}
+            key={`BrailleSign-${caracter}-${index}`}
+          />
 
           <article key={`2${caracter}-${index}`} className={`flex justify-center items-center cursor-pointer rounded
         bg-transparent hover:bg-gray-200 hover:bg-opacity-50 border border-black shadow-braille transition-colors duration-150

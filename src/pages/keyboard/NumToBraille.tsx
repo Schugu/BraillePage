@@ -2,7 +2,7 @@ import brailleSignValue from "../../components/codificador/brailleSignValue";
 import BrailleSign from "./BrailleSign";
 
 type NumToBrailleProps = {
-  numerosParaCodificar: string,
+  numerosParaCodificar: string;
   formato: 'chico' | 'mediano' | 'grande';
   handleClick: (caracter: string) => void;
 }
@@ -18,7 +18,7 @@ export default function NumToBraille({ numerosParaCodificar, formato, handleClic
     if (numSinFormato.length < 2) {
       if (numSinFormato in brailleSignValue) {
         let numeroConSimbolo: string[] = [];
-    
+
         if (numSinFormato === ' ') {
           numeroConSimbolo = [];
         } else {
@@ -27,10 +27,11 @@ export default function NumToBraille({ numerosParaCodificar, formato, handleClic
 
         return numeroConSimbolo.map((num, index) => {
           return (
-            <BrailleSign 
-              caracter={num} 
-              formato={formato} 
-              key={`${num}-${numIndex}-${index}`} 
+            <BrailleSign
+              tabIndex={50 + numIndex * 10 + index}
+              caracter={num}
+              formato={formato}
+              key={`${num}-${numIndex}-${index}`}
               onClick={handleClick}
             />
           );
@@ -43,15 +44,16 @@ export default function NumToBraille({ numerosParaCodificar, formato, handleClic
       return charSeparados.map((char, charIndex) => {
         if (char in brailleSignValue) {
           return (
-            <BrailleSign 
-              caracter={char} 
-              formato={formato} 
-              key={`${char}-${numIndex}-${charIndex}`} 
+            <BrailleSign
+              tabIndex={50 + numIndex * 10 + charIndex}
+              caracter={char}
+              formato={formato}
+              key={`${char}-${numIndex}-${charIndex}`}
               onClick={handleClick}
             />
           );
         }
-        return null; 
+        return null;
       });
     }
   });

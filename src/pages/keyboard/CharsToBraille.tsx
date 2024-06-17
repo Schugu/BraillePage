@@ -14,6 +14,7 @@ export default function CharsToBraille({ cadenaParaCodificar, formato, handleCli
     if (caracter in brailleSignValue) {
       return (
         <BrailleSign
+          tabIndex={11+index}
           caracter={caracter}
           formato={formato}
           key={`${caracter}-${index}`}

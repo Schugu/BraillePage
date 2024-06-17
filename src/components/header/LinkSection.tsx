@@ -10,7 +10,7 @@ export default function LinkSection({ LinkTo, Icon, Label, tabIndex }: LinkSecti
   const location = useLocation();
   return (
     <Link to={LinkTo} tabIndex={tabIndex}
-    className={` ${location.pathname === LinkTo ? 'text-white' : 'text-gray-400' }
+    className={` ${location.pathname === LinkTo ? 'text-blue-100 hover:text-blue-300' : 'text-blue-100 text-opacity-60 hover:text-blue-100' }
     flex gap-2 items-center`}>
       <span className={`${Icon}`} />
       <p>{Label}</p>

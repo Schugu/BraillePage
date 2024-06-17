@@ -18,9 +18,10 @@ export default function BrailleSign({ caracter, formato, onClick, tabIndex }: Br
               : caracter === ',' ? 'coma'
                 : caracter === ';' ? 'punto y coma'
                   : caracter === '-' ? 'guión'
-                    : caracter}  
+                    : caracter
+        }  
       `}
-          
+
       tabIndex={caracter !== "º" ? tabIndex : undefined}
 
       onClick={() => onClick(caracter)}
@@ -32,7 +33,6 @@ export default function BrailleSign({ caracter, formato, onClick, tabIndex }: Br
         ${formato === 'chico' ? 'w-[50px] h-[73.5px]' : ''}
       `}
     >
-      <span className="sr-only">{caracter === ' ' ? 'espacio' : caracter}</span>
       {
         brailleSignValue[caracter].map((punto, puntoIndex) => (
           <span key={puntoIndex} aria-hidden="true"

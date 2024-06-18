@@ -63,6 +63,7 @@ const brailleSignValue: BrailleSignValue = {
 
     '¥': [1, 1, 1, 1, 1, 1], /* Signo Generador */
     'º': [0, 1, 0, 1, 1, 1], /* Signo de número */
+    '^': [0, 1, 0, 0, 0, 1], /* Signo de mayúscula */
 
     // Números
     //    1  4  2  5  3  6

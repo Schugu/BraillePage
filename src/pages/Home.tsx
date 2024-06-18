@@ -18,7 +18,7 @@ export default function Home() {
         </div>
 
         <div className="w-full flex flex-wrap items-center justify-center gap-2">
-          <CharsToBraille cadenaParaCodificar={"Felíz"} formato={resolution} indexProp={11}/>
+          <CharsToBraille cadenaParaCodificar={"felíz"} formato={resolution} indexProp={11}/>
           <p tabIndex={10}
             className="inline-block max-w-lg text-center lg:text-left text-balance self-center"
           >Combinando de distintas maneras estos seis puntos, pueden representarse todas las letras, los números, los signos, la musicografía, etc.</p>
